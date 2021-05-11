@@ -4,6 +4,7 @@
     height: auto;
 }
 .sidebar {
+    position: fixed;
     width: 20%;
     height: 100vh;
     margin: 0;
