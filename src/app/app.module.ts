@@ -8,6 +8,8 @@ import { FeedComponent } from './feed/feed.component';
 import { ProjectComponent } from './project/project.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

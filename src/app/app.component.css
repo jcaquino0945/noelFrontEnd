@@ -7,11 +7,12 @@
     width: 20%;
     height: 100vh;
     margin: 0;
-    background-color: blue;
+    background-color: #FFFFFF;
+    border-right: 3px solid #F5F2F2;
 }
 .router-outlet {
     width: 80%;
     height: 100vh;
     margin: 0;
-    background-color: wheat;
+    background-color: FDFDFD;
 }
