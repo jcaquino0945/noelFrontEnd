@@ -1,3 +1,9 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 div.container {
     width: 90%;
     margin: auto;
@@ -16,6 +22,7 @@ div.header p {
     font-weight: bold;
     letter-spacing: .02em;
     display: inline;
+    margin: 0;
 }
 div.header .search{
     display: flex;
@@ -33,11 +40,27 @@ div.header .search #input-search{
 /* HEADER END */
 
 /* CONTENT START */
-div.content-container .feed-img {
+div.content-container {
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+}
+.frame {
+
+    height: 300px;
+    margin: 2em;
+    
+}
+div.content-container .feed-content{
     border: 1px solid black;
+    
+}
+
+/* div.content-container .feed-img img{
     width: 20%;
     height: 15vw;
-}
+} */
 div.content-container .feed-img img{
     max-width: 100%;
 }
