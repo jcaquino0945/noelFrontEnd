@@ -1,0 +1,54 @@
+<div class='container'>
+    <div class='header'>
+        <p>Dashboard</p>
+
+        <div class='search'>
+            <mat-icon>search</mat-icon>
+            <input type="text" id="input-search" placeholder="Search">
+        </div>
+    </div>
+
+    <table class="table table-striped table-responsive">
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Author</th>
+            <th>Date Posted</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr routerLink="/dashboard/project/1" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <td>Gawad Kalinga</td>
+            <td>By Noel Estrella</td>
+            <td>May 15 2021</td>
+            <td>320 Comments</td>
+          </tr>
+          <tr routerLink="/feed/project/2" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <td>Gawad Kalinga</td>
+            <td>By Noel Estrella</td>
+            <td>May 15 2021</td>
+            <td>320 Comments</td>
+          </tr>
+          <tr>
+            <td>Gawad Kalinga</td>
+            <td>By Noel Estrella</td>
+            <td>May 15 2021</td>
+            <td>320 Comments</td>
+          </tr>
+          <tr>
+            <td>Gawad Kalinga</td>
+            <td>By Noel Estrella</td>
+            <td>May 15 2021</td>
+            <td>320 Comments</td>
+          </tr>
+          <tr>
+            <td>Gawad Kalinga</td>
+            <td>By Noel Estrella</td>
+            <td>May 15 2021</td>
+            <td>320 Comments</td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>
