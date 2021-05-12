@@ -4,6 +4,7 @@
     height: auto;
 }
 .sidebar {
+    overflow: auto;
     position: sticky;
     width: 20%;
     height: 100vh;
