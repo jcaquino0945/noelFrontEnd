@@ -1,1 +1,87 @@
-<p>admin-project works!</p>
+<div class="container">
+
+    <!-- feed header -->
+    <div class='header'>
+        <p>Dashboard</p>
+
+    </div>
+
+    <div class='content-container'>
+        <div class='img-container'>
+            <img src="../../assets/imgs/filler.png" alt="">
+        </div>
+
+        <div class='content-info'>
+            <p>Content Title</p>
+            <p>Author</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur 
+                adipisicing elit. Dignissimos, sit 
+                aperiam. A et aliquid cumque quasi 
+                neque officiis numquam eligendi 
+                perferendis debitis incidunt hic, ipsa 
+                sint dolor explicabo quaerat iste!</p>
+        </div>
+    </div>
+
+    <div class="count-track">
+        <div class="img-count-container">
+            <span>Images Uploaded: </span>
+            <span id='img-count'>65</span>
+        </div>
+        <div class="audio-count-container">
+            <span>Audio Uploaded: </span>
+            <span id='audio-count'>20</span>
+        </div>
+        <div class="video-count-container">
+            <span>Video Uploaded: </span>
+            <span id='video-count'>8</span>
+        </div>
+        <div class="text-count-container">
+            <span>Text Uploaded: </span>
+            <span id='text-count'>86</span>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table class="table table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th>Name of User</th>
+                    <th>Commend/Reflection</th>
+                    <th>Date Added</th>
+                    <th>File</th>
+                    <th>Type of File</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr routerLink="/dashboard/project/1" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <td>Noel Estrella</td>
+                    <td>Commendable! Outstanding work!</td>
+                    <td>May 15 2021</td>
+                    <td>file.jpg</td>
+                    <td>jpg</td>
+                </tr>
+                <tr routerLink="/dashboard/project/2" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <td>Cedric Bolina</td>
+                    <td>There are many different experiences in life that have changed a part of me as a person. 
+                        But, nothing so profoundly changed my views and outlook on life like the birth of my youngest 
+                        brother. </td>
+                    <td>April 10 2021</td>
+                    <td>document.pdf</td>
+                    <td>pdf</td>
+                </tr>
+                <tr routerLink="/dashboard/project/3" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <td>Miguel Aquino</td>
+                    <td>There are many different experiences in life that have changed a part of me as a person. 
+                        But, nothing so profoundly changed my views and outlook on life like the birth of my youngest 
+                        brother. </td>
+                    <td>April 10 2021</td>
+                    <td>comment.mp3</td>
+                    <td>mp3</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
