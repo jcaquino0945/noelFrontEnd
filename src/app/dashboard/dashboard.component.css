@@ -1,9 +1,10 @@
+/* TABLE START */
 div.container {
     width: 90%;
     margin: auto;
 }
 div.header {
-    margin: 3em 2em;
+    margin: 3em 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +44,11 @@ div.header .search #input-search{
     outline-width: 0;
     background:transparent;
 }
-
-tbody tr:hover {
-background-color: #757af8;
+tbody tr {
+    transition: all 0.3s ease 0s;
 }
+tbody tr:hover {
+    /* background-color: #757af8; */
+    background-color: #a7a9ff;
+}
+/* TABLE END */
