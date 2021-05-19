@@ -168,6 +168,11 @@ div.others-comment .content span{
     object-fit: contain;
     margin-bottom: 1em;
 }
+.others-comment .content .comment .media .media-content-vid{
+    max-height: 150px;
+    object-fit: contain;
+    margin-bottom: 1em;
+}
 .others-comment .content .comment .media {
     max-width: 250px;
     max-height: 250px;

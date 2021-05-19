@@ -1,8 +1,8 @@
 
-<div class='container'>
+<div class='container' *ngIf="project">
     <!-- feed header -->
     <div class='header'>
-        <span>Selected Project Title</span>
+        <span>Project</span>
 
         <!-- <div class='search'>
             <mat-icon>search</mat-icon>
@@ -13,23 +13,18 @@
 
     <div class='content-container'>
         <div class='img-container'>
-            <img src="../../assets/imgs/filler.png" alt="">
+            <img src="{{project.fileName}}" alt="">
         </div>
 
         <div class='content-info'>
-            <p>Content Title</p>
-            <p>Author</p>
+            <p>{{project.name}}</p>
+            <p>{{project.authorName}}</p>
 
-            <p>Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Dignissimos, sit 
-                aperiam. A et aliquid cumque quasi 
-                neque officiis numquam eligendi 
-                perferendis debitis incidunt hic, ipsa 
-                sint dolor explicabo quaerat iste!</p>
+            <p>{{project.description}}</p>
         </div>
 
         <div class="comment-section">
-            <span>1,000</span><span> Comments</span>
+            <span>{{project.comments.length}}</span><span> Comments</span>
 
             <div class="user-comment">
                 <img src="../../assets/imgs/sample_user.jpg" alt="user_picture" class='commenter-picture'>
@@ -51,38 +46,25 @@
             </div>
 
             <div class="others-comment">
-                <div class="content">
+                <div class="content" *ngFor="let comment of project.comments">
                     <div class="commenter-info">
                         <img src="../../assets/imgs/user_icon.png" alt="user_picture" class='commenter-picture'>
-                        <span>Commenter</span>
+                        <span>{{comment.authorName}}</span>
                     </div>
-
+                    <p>{{comment.comment}}</p>
                     <div class="comment">
-                        <div class="media">
+                        <div class="media" *ngIf="comment.fileType == 'video/mp4'">
                             <video controls class="vid">
-                                <source src="../../assets/imgs/video_filler.mp4" type="video/mp4">
+                                <source src="{{comment.fileName}}" type="video/mp4" style="height: auto; width: 80px;">
                             </video>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptas nostrum obcaecati tempore ad nam tenetur dolores corrupti fugit pariatur.</p>
+                        <div class="media" *ngIf="comment.fileType == 'image/jpeg'">
+                            <img src="{{comment.fileName}}" alt="" class='media-content'>
+                        </div>
+                        
                     </div>
                 </div>
                 <!-- ============== -->
-                <div class="content">
-                    <div class="commenter-info">
-                        <img src="../../assets/imgs/user_icon.png" alt="user_picture" class='commenter-picture'>
-                        <span>Commenter</span>
-                    </div>
-
-                    <div class="comment">
-                        <div class="media">
-                            <img src="../../assets/imgs/filler.png" alt="" class='media-content'>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptas nostrum obcaecati tempore ad nam tenetur dolores corrupti fugit pariatur.</p>
-                    </div>
-                </div>
-                
-                
-                
             </div>
         </div>
     </div>
