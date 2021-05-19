@@ -1,0 +1,29 @@
+<div class="container">
+    <h2 mat-dialog-title>New Project</h2>
+
+    <mat-dialog-content class="mat-typography">
+        <div class="content-container">
+            <p class="title">Project Title</p>
+            <input type="text" id="proj-title" class="user-input" placeholder="Project title">
+        </div>
+        <div class="content-container">
+            <p class="title">Description</p>
+            <textarea name="" id="desc" class="user-input" cols="30" rows="5"placeholder="Project description"></textarea>
+        </div>
+
+        <div class="content-container">
+            <div id="attach-container">
+                <!-- <span>Attach File</span> -->
+                <input type="file">
+            </div>
+        </div>
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+
+        <button mat-button class="btn btn-primary" id="cancel" mat-dialog-close>Cancel</button>
+        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial>Add Project</button>
+
+    </mat-dialog-actions>
+</div>

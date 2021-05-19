@@ -35,13 +35,19 @@
                 <img src="../../assets/imgs/sample_user.jpg" alt="user_picture" class='commenter-picture'>
                 
                 <div class="add-comment">
-                    <input type="text" placeholder="Your comment here..." id="comment" >
+                    <textarea cols="30" rows="2" placeholder="Your comment here..." id="comment"></textarea>
 
-                    <div>
-                        <mat-icon> attach_file</mat-icon>
-                        <mat-icon>send</mat-icon>
+                    <div class="action-container">
+                        <label for="attach" id="attach-lbl"> <mat-icon> attach_file </mat-icon> </label>
+                        <input type="file" id="attach">
+                        <mat-icon> <input type="submit" value="send" id="submit"> </mat-icon> 
+
                     </div>
+
                 </div>
+                <!-- <input type="file" id="attach" value="a"> -->
+
+
             </div>
 
             <div class="others-comment">
