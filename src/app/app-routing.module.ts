@@ -6,9 +6,11 @@ import { ProfileComponent } from './profile/profile.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminProjectComponent } from './admin-project/admin-project.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: 'feed', component: FeedComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboard/project/:id', component: AdminProjectComponent },

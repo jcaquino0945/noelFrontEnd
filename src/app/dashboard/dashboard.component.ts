@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(DialogContentExampleDialog);
+    const dialogRef = this.dialog.open(DialogContentNewProjDialog);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
@@ -27,4 +27,4 @@ export class DashboardComponent implements OnInit {
   templateUrl: './form/form.html',
   styleUrls: ['./form/form.css']
 })
-export class DialogContentExampleDialog {}
+export class DialogContentNewProjDialog {}
