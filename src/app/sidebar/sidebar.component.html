@@ -28,6 +28,9 @@
         <div class="sidebar-link">
             <mat-icon routerLink="/support" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">question_answer</mat-icon> <a routerLink="/support" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Support</a>
         </div>
+        <div class="sidebar-link">
+            <button (click)="logout()">logout</button>
+        </div>
     </div>
     <div class="sidebar-footer">
     <p>© 2021 | App Title</p>

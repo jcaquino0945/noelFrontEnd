@@ -7,14 +7,15 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminProjectComponent } from './admin-project/admin-project.component';
 import { HomeComponent } from './home/home.component';
+import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
-  { path: 'feed', component: FeedComponent },
+  { path: 'feed', component: FeedComponent,canActivate : [AuthGuard]},
   { path: 'home', component: HomeComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'dashboard/project/:id', component: AdminProjectComponent },
-  { path: 'feed/project/:id', component: ProjectComponent },
+  { path: 'profile', component: ProfileComponent,canActivate : [AuthGuard]},
+  { path: 'dashboard', component: DashboardComponent,canActivate : [AuthGuard] },
+  { path: 'dashboard/project/:id', component: AdminProjectComponent,canActivate : [AuthGuard] },
+  { path: 'feed/project/:id', component: ProjectComponent,canActivate : [AuthGuard] },
   { path: '',   redirectTo: '/feed', pathMatch: 'full' }, // redirect to `feed`
   { path: '**', component: PagenotfoundComponent },
 ];
