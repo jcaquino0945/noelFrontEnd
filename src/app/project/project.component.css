@@ -140,9 +140,6 @@ div.others-comment .content{
     padding-bottom: 2em;
 }
 
-div.others-comment .commenter-info img{
-    /* border: 1px solid black; */
-}
 div.others-comment .commenter-info span{
     font-weight: bold;
 }

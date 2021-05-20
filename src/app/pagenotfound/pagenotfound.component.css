@@ -1,5 +1,6 @@
 *{
     user-select: none;
+    -webkit-user-drag: none;
 }
 img {
     margin: auto;

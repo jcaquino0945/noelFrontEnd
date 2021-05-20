@@ -1,1 +1,50 @@
-<p>users works!</p>
+<div class='container'>
+
+    <!-- feed header -->
+    <div class='header'>
+        <p>Users</p>
+    </div>
+
+    <table class="table table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Account Type</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr routerLink="/users/1" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <td>Noel Estrella</td>
+                <td>noes@email.com</td>
+                <td>Admin</td>
+                <td> <mat-icon>check</mat-icon> </td>
+                <td> <mat-icon>delete</mat-icon> </td>
+            </tr>
+            <tr routerLink="/users/2" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <td>Mig Aquino</td>
+                <td>miaq@email.com</td>
+                <td>Admin</td>
+                <td> <mat-icon>check</mat-icon> </td>
+                <td> <mat-icon>delete</mat-icon> </td>
+            </tr>
+            <tr routerLink="/users/3" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <td>Ced Bolina</td>
+                <td>clb@email.com</td>
+                <td>Admin</td>
+                <td> <mat-icon>check</mat-icon> </td>
+                <td> <mat-icon>delete</mat-icon> </td>
+            </tr>
+            <tr routerLink="/users/4" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <td>Pedro Man</td>
+                <td>pman@email.com</td>
+                <td>User</td>
+                <td> <mat-icon>close</mat-icon> </td>
+                <td> <mat-icon>delete</mat-icon> </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
