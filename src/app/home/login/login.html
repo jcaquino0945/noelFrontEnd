@@ -1,0 +1,18 @@
+
+<div class="container">
+    <h2 mat-dialog-title id="title">User Login</h2>
+
+    <mat-dialog-content class="mat-typography">
+        <div class="content-container">
+            <input type="text" id="uname" class="user-input" placeholder="Username">
+        </div>
+        <div class="content-container">
+            <input type="password" id="uname" class="user-input" placeholder="Password">
+        </div>
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="center">
+        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial>LOGIN</button>
+    </mat-dialog-actions>
+</div>

@@ -16,5 +16,8 @@
     margin-left: 20%;
     width: 80%;
     height: 100vh;
-    background-color: FDFDFD;
+    background-color: #FDFDFD;
+}
+::ng-deep.mat-dialog-container {
+    background: #fff;
 }

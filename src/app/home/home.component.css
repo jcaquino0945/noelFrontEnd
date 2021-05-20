@@ -1,0 +1,36 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 1.5em;
+}
+nav #title {
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 0;
+}
+nav #actions{
+    display: flex;
+}
+#actions li {
+    list-style: none;
+    padding-left: .8em;
+}
+#actions .btn {
+    padding: .5em 2em;
+}
+
+#actions #userLogin-btn {
+    background: #4990fa;
+    border: #4990fa;
+}
+#actions #userLogin-btn:hover {
+    background: #3572ce;
+}
+#actions #userSignup-btn {
+    background: #58B761;
+    border: #58B761;
+}
+#actions #userSignup-btn:hover {
+    background: #4a9b52;
+}

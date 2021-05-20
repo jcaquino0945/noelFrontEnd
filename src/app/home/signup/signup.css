@@ -1,0 +1,60 @@
+.container {
+    color: black;
+    width: 40vw;
+    height: auto;
+    margin-bottom: 1.5em;
+}
+
+.container #title{
+    text-align: center;
+    user-select: none;
+}
+.content-container .field-title {
+    padding: 0;
+    margin: 0;
+    padding-left: 7px;
+}
+.content-container .field-title span{
+    color: red;
+    user-select: none;
+}
+
+.content-container .user-input{
+    outline: 0;
+    border: 1px solid #c7c7c7;
+    border-radius: 5px;
+    padding: .5em 15px;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+}
+.content-container .user-input:hover{
+    box-shadow: inset 0 0 2px #000000;
+}
+
+div.single-row {
+    display: flex;
+    justify-content:space-around;
+
+}
+div.single-row .row {
+    width: 48%;
+}
+div.single-row .row:nth-child(2) {
+    margin-left: 5px;
+}
+
+mat-dialog-actions button {
+    padding: .5em 4em;
+    width: 100%;
+    margin-top: .5em;
+    letter-spacing: 2px;
+}
+mat-dialog-actions .btn {
+    background: #58B761;
+    border: #58B761;
+}
+mat-dialog-actions .btn:hover {
+    background: #4a9b52;
+}
