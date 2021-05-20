@@ -1,18 +1,42 @@
 
 <div class="container">
     <h2 mat-dialog-title id="title">User Login</h2>
-
     <mat-dialog-content class="mat-typography">
         <div class="content-container">
-            <input type="text" id="uname" class="user-input" placeholder="Username">
+            <input type="text" id="uname" class="user-input" placeholder="Username"  [(ngModel)]="user.username">
         </div>
         <div class="content-container">
-            <input type="password" id="uname" class="user-input" placeholder="Password">
+            <input type="password" id="uname" class="user-input" placeholder="Password" [(ngModel)]="user.password">
+        </div>
+        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial (click)="login()" [disabled]="user.username == '' && user.password == ''">LOGIN</button>
+    </mat-dialog-content>
+
+</div>
+
+<!--
+
+    
+<div class="container">
+    <form novalidate #loginForm="ngForm" (ngSubmit)="login()">
+    <h2 mat-dialog-title id="title">User Login</h2>
+    <mat-dialog-content class="mat-typography">
+        <div class="content-container">
+            <input type="text" id="uname" class="user-input" placeholder="Username" [(ngModel)]="user.username" name="username" #username="ngModel"
+            required>
+            <p *ngIf="username.errors?.required" class="errorMsg" id="errorMsgUser">Username is required</p>
+        </div>
+        <div class="content-container">
+            <input type="password" id="uname" class="user-input" placeholder="Password" [(ngModel)]="user.password" name="password" #password="ngModel"
+            required>
+            <p *ngIf="password.errors?.required" class="errorMsg" id="errorMsgPass">Password is required</p>
         </div>
 
     </mat-dialog-content>
 
     <mat-dialog-actions align="center">
-        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial>LOGIN</button>
+        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial type="submit" [disabled]="loginForm.form.invalid"
+        >LOGIN</button>
     </mat-dialog-actions>
+    </form>
 </div>
+-->
