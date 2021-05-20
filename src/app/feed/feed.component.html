@@ -11,98 +11,19 @@
     </div>
 
     <!-- content container -->
-    <div class='content-container'>
-        <div class="frame">
-            <div class='feed-content' routerLink="/feed/project/1" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+    <div class='content-container' *ngIf="projects$">
+        <div class="frame" *ngFor="let project of projects$">
+            <div class='feed-content' [routerLink]="['/feed/project', project._id]"routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <div class='feed-img'>
-                    <img src="../../assets/imgs/filler.png" alt="">
+                    <img src="{{project.fileName}}" alt="">
                 </div>
 
                 <div class="details">
-                    <span> Content Title </span>
-                    <span> Date </span>
+                    <span> {{project.name}} </span>
+                    <span> {{project.uploaded | date}} </span>
                 </div>
             </div>
         </div>
-        <div class="frame">
-            <div class='feed-content' routerLink="/feed/project/2" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <div class='feed-img'>
-                    
-                    <img src="../../assets/imgs/filler.png" alt="">
-                </div>
-
-                <div class="details">
-                    <span> Content Title </span>
-                    <span> Date </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="frame">
-            <div class='feed-content'>
-                <div class='feed-img'>
-                    <img src="../../assets/imgs/filler.png" alt="">
-                </div>
-
-                <div class="details">
-                    <span> Content Title </span>
-                    <span> Date </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="frame">
-            <div class='feed-content'>
-                <div class='feed-img'>
-                    <img src="../../assets/imgs/filler.png" alt="">
-                </div>
-
-                <div class="details">
-                    <span> Content Title </span>
-                    <span> Date </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="frame">
-            <div class='feed-content'>
-                <div class='feed-img'>
-                    <img src="../../assets/imgs/filler.png" alt="">
-                </div>
-
-                <div class="details">
-                    <span> Content Title </span>
-                    <span> Date </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="frame">
-            <div class='feed-content'>
-                <div class='feed-img'>
-                    <img src="../../assets/imgs/filler.png" alt="">
-                </div>
-
-                <div class="details">
-                    <span> Content Title </span>
-                    <span> Date </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="frame">
-            <div class='feed-content'>
-                <div class='feed-img'>
-                    <img src="../../assets/imgs/filler.png" alt="">
-                </div>
-
-                <div class="details">
-                    <span> Content Title </span>
-                    <span> Date </span>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     
