@@ -26,7 +26,12 @@ export class FeedComponent implements OnInit {
       (errmess) => (this.errMess = <any>errmess)
     );
     this.authenticated=this.authService.isAuthenticated();
-
+    if (!localStorage.getItem('foo')) { 
+      localStorage.setItem('foo', 'no reload') 
+      location.reload() 
+    } else {
+      localStorage.removeItem('foo') 
+    }
   }
   reloadComponent() {
     let currentUrl = this.router.url;
@@ -34,4 +39,5 @@ export class FeedComponent implements OnInit {
         this.router.onSameUrlNavigation = 'reload';
         this.router.navigate([currentUrl]);
     }
+    
 }
