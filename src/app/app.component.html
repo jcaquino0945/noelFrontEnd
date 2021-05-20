@@ -2,7 +2,10 @@
   <div class="sidebar" *ngIf="authenticated">
     <app-sidebar></app-sidebar>
   </div>
-  <div class="router-outlet">
+  <div class="router-outlet" *ngIf="authenticated">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="router-outlet" *ngIf="!authenticated" style="width: 100%!important; margin-left: 0!important;">
     <router-outlet></router-outlet>
   </div>
 </div>

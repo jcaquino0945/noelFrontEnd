@@ -15,6 +15,7 @@ currentUser;
     ) { }
 
   ngOnInit(): void {
+    console.log('sidebar init')
     this.currentUser = this.authService.getUserDetails();
   }
 

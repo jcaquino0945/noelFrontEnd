@@ -3,6 +3,7 @@ import { ProjectService } from '../services/project.service';
 import { Project } from '../models/project';
 import { Comment } from '../models/comment';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -15,7 +16,8 @@ export class FeedComponent implements OnInit {
   authenticated;
   constructor(
     private projectService: ProjectService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -26,5 +28,10 @@ export class FeedComponent implements OnInit {
     this.authenticated=this.authService.isAuthenticated();
 
   }
-
+  reloadComponent() {
+    let currentUrl = this.router.url;
+        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+        this.router.onSameUrlNavigation = 'reload';
+        this.router.navigate([currentUrl]);
+    }
 }
