@@ -41,10 +41,16 @@
     padding: 15px 0px 15px 30px;
     transition: .1s all ease-in-out;
     margin-bottom: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-left: 6px solid transparent;
 }
 .sidebar-link:hover {
     border-left: 6px solid #6167F9;
-    background-color: rgb(235, 235, 235);
+    background-color: #ebebeb;
+    /* font-weight: bold; */
+    color: #6167F9;
 }
 .mat-icon {
     vertical-align: middle; 

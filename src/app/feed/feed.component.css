@@ -72,9 +72,17 @@ div.frame:hover {
     transform: scale(1.03);
     box-shadow: #c7c7c7 0 5px 10px;
 }
-
+div.content-container .feed-img{
+    background: #8387ff;
+    overflow: hidden;
+}
 div.content-container .feed-img img{
-    max-width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: 18vw;
 }
 div.content-container .details {
     width: 80%;
