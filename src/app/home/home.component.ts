@@ -49,6 +49,9 @@ export class DialogContentLoginDialog {
   ngOnInit(): void {}
   
   login() {
+    console.log(this.user.username)
+    console.log(this.user.password)
+
     this.authService
     .validate(this.user.username, this.user.password)
     .then((response) => {

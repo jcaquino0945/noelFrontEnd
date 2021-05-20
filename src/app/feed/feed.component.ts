@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../services/project.service';
 import { Project } from '../models/project';
 import { Comment } from '../models/comment';
+import { AuthService } from '../services/auth.service';
+
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
@@ -10,9 +12,10 @@ import { Comment } from '../models/comment';
 export class FeedComponent implements OnInit {
   projects$: Project[];
   errMess: string;
-
+  authenticated;
   constructor(
     private projectService: ProjectService,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -20,6 +23,8 @@ export class FeedComponent implements OnInit {
       (projects$) => (this.projects$ = projects$),
       (errmess) => (this.errMess = <any>errmess)
     );
+    this.authenticated=this.authService.isAuthenticated();
+
   }
 
 }

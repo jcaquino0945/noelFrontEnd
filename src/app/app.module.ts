@@ -13,6 +13,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { DashboardComponent, DialogContentNewProjDialog } from './dashboard/dashboard.component';
 import { AdminProjectComponent } from './admin-project/admin-project.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UsersComponent } from './users/users.component';
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { HomeComponent, DialogContentLoginDialog, DialogContentSignupDialog } from './home/home.component';
@@ -33,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     DialogContentNewProjDialog,
     HomeComponent, 
     DialogContentLoginDialog,
-    DialogContentSignupDialog
+    DialogContentSignupDialog,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
