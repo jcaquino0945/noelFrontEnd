@@ -8,7 +8,7 @@
         <div class="content-container">
             <input type="password" id="uname" class="user-input" placeholder="Password" [(ngModel)]="user.password">
         </div>
-        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial (click)="login()">LOGIN</button>
+        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial (click)="login()" [disabled]="user.username == '' && user.password == ''">LOGIN</button>
     </mat-dialog-content>
 
 </div>
