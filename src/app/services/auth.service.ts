@@ -7,24 +7,23 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
 
   constructor(private http: HttpClient) {}
+  public getUserDetails() {
+    let user = JSON.parse(sessionStorage.getItem('user'));
+    return user;
+
+  }
 
   public isAuthenticated(): Boolean {
-    console.log(sessionStorage.getItem('user'))
-    console.log(sessionStorage.getItem('token'))
-
-    let user = sessionStorage.getItem('user');
     let token = sessionStorage.getItem('token');
-    if (token && user) {
+    if (token) {
       return true;
     }
     return false;
   }
 
   public setUserInfo(token,user) {
-    console.log(token);
-    console.log(user)
     sessionStorage.setItem('token',token);
-    sessionStorage.setItem('user',user);
+    sessionStorage.setItem('user',JSON.stringify(user));
 
   }
 

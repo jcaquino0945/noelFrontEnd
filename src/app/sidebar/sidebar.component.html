@@ -22,7 +22,7 @@
         <div class="sidebar-link">
             <mat-icon routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> person_pin</mat-icon> <a routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Profile</a>
         </div>
-        <div class="sidebar-link">
+        <div class="sidebar-link" *ngIf="currentUser.user.admin == true">
             <mat-icon routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">dashboard</mat-icon> <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
         </div>
         <div class="sidebar-link">
