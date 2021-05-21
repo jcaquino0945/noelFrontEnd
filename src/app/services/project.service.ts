@@ -23,6 +23,10 @@ export class ProjectService {
     'Content-Type': 'application/json',
     //'Authorization': 'bearer ' + sessionStorage.getItem('token')
  });
+ headersWithAuth = new HttpHeaders({
+  'Content-Type': 'application/json',
+  'Authorization': 'bearer ' + sessionStorage.getItem('token')
+});
   constructor(
     private http: HttpClient,
     private processHTTPMsgService: ProcessHTTPMsgService
@@ -44,6 +48,54 @@ export class ProjectService {
     return this.getProjects()
       .pipe(map((projects) => projects.map((projects) => projects._id)))
       .pipe(catchError((error) => error));
+  }
+
+  addComment(id,comment,author,file?:File):Observable<any> {
+    const formData = new FormData();
+    console.log(typeof id)
+    console.log(typeof comment)
+    console.log(typeof author)
+    console.log(typeof file)
+
+
+    if (!file) {
+      formData.append('comment',comment);
+      formData.append('author',author)
+
+      const params = new HttpParams();
+      const header = new HttpHeaders({
+        Authorization: 'bearer ' + sessionStorage.getItem('token'),
+      });
+    const options = {
+      params,
+      reportProgress: true,
+      headers: header,
+    };
+    const req = new HttpRequest('POST', apiUrl + '/' + id + '/comments', formData, options);
+    return this.http.request(req);
+    } else {
+      formData.append('fileName', file);
+      formData.append('comment',comment);
+      formData.append('author',author)
+
+      const params = new HttpParams();
+
+      const header = new HttpHeaders({
+        Authorization: 'bearer ' + sessionStorage.getItem('token'),
+      });
+
+    const options = {
+      params,
+      reportProgress: true,
+      headers: header,
+    };
+    const req = new HttpRequest('POST', apiUrl + '/' + id + '/comments', formData, options);
+    return this.http.request(req);
+    }
+    
+
+
+    
   }
 
   addProject(project: Project, file: File, sizes: any): Observable<any> {
