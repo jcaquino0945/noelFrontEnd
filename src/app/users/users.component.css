@@ -32,3 +32,57 @@ div.header p {
 table.table {
     margin-top: 3em ;
 }
+/* TABLE START */
+
+table.table {
+    text-align: center;
+}
+.table .delete {
+    color: #bd2d2d;
+}
+
+div.container {
+    width: 90%;
+    margin: auto;
+}
+div.header {
+    margin: 3em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.header p {
+    font-size: 2em ;
+    font-weight: bold;
+    letter-spacing: .02em;
+    display: inline;
+    margin: 0;
+}
+
+div.header .search{
+    display: flex;
+    align-items: center;
+    width: 30%;
+    
+    border: 1px solid #c7c7c7;
+    padding-left: 1em;
+    border-radius: 25px;
+    transition: all 0.3s ease 0s;
+}
+
+tbody tr {
+    transition: all 0.3s ease 0s;
+}
+tbody tr:hover {
+    background-color: #bebffd;
+}
+/* tbody tr:hover .delete{
+    transition: all 0.3s ease 0s;
+    border-radius: 25px;
+}
+tbody tr:hover .delete{
+    color: #7e1d1d;
+
+} */
+/* TABLE END */
