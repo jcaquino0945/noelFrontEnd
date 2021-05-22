@@ -47,7 +47,7 @@
             <div class="others-comment">
                 <div class="content" *ngFor="let comment of project.comments">
                     <div class="commenter-info">
-                        <span style="font-weight: bold;">{{comment.authorName}}</span>
+                        <span>{{comment.authorName}}</span>
                     </div>
                     <p>{{comment.comment}}</p>
                     <div class="comment">
@@ -67,6 +67,7 @@
                         </div>
                         
                     </div>
+                <hr>
                 </div>
                 <!-- ============== -->
             </div>

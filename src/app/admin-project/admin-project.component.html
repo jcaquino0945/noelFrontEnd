@@ -54,31 +54,16 @@
                     <th>Type of File</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr routerLink="/dashboard/project/1" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <td>Noel Estrella</td>
-                    <td>Commendable! Outstanding work!</td>
-                    <td>May 15 2021</td>
+            <tbody *ngIf="projects$">
+                <tr 
+                *ngFor="let project of projects$" 
+                routerLink="/dashboard/project/1" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                >
+                    <td> {{ project.authorName}} </td>
+                    <td>  </td>
+                    <td> {{ project.uploaded | date }} </td>
                     <td>file.jpg</td>
                     <td>jpg</td>
-                </tr>
-                <tr routerLink="/dashboard/project/2" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <td>Cedric Bolina</td>
-                    <td>There are many different experiences in life that have changed a part of me as a person. 
-                        But, nothing so profoundly changed my views and outlook on life like the birth of my youngest 
-                        brother. </td>
-                    <td>April 10 2021</td>
-                    <td>document.pdf</td>
-                    <td>pdf</td>
-                </tr>
-                <tr routerLink="/dashboard/project/3" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <td>Miguel Aquino</td>
-                    <td>There are many different experiences in life that have changed a part of me as a person. 
-                        But, nothing so profoundly changed my views and outlook on life like the birth of my youngest 
-                        brother. </td>
-                    <td>April 10 2021</td>
-                    <td>comment.mp3</td>
-                    <td>mp3</td>
                 </tr>
             </tbody>
         </table>

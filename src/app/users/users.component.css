@@ -60,16 +60,6 @@ div.header p {
     margin: 0;
 }
 
-div.header .search{
-    display: flex;
-    align-items: center;
-    width: 30%;
-    
-    border: 1px solid #c7c7c7;
-    padding-left: 1em;
-    border-radius: 25px;
-    transition: all 0.3s ease 0s;
-}
 
 tbody tr {
     transition: all 0.3s ease 0s;
@@ -77,12 +67,11 @@ tbody tr {
 tbody tr:hover {
     background-color: #bebffd;
 }
-/* tbody tr:hover .delete{
-    transition: all 0.3s ease 0s;
-    border-radius: 25px;
+.form-switch input {
+    margin: 0;
 }
-tbody tr:hover .delete{
-    color: #7e1d1d;
 
-} */
+td .btn-outline-danger {
+    padding: 0 1em;
+}
 /* TABLE END */

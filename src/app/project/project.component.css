@@ -131,6 +131,11 @@ div.action-container {
     align-items: center;
     justify-content: space-around;
 }
+div.action-container input{
+    outline: 0;
+    border: none;
+    background: transparent;
+}
 /* ======OTHERS-COMMENT======= */
 div.others-comment {
     padding-top: 3em;
@@ -148,7 +153,8 @@ div.others-comment .commenter-info span{
 }
 
 div.others-comment .content span{
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    margin-bottom: 10px;
 }
 
 .others-comment .content .comment {
@@ -175,7 +181,7 @@ div.others-comment .content span{
 }
 .others-comment .content .comment p{
     margin: 1em 0;
-
+    
 }
 
 /* CONTENT END */
