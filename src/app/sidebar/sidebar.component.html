@@ -31,8 +31,8 @@
         <div class="sidebar-link" routerLink="/support" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <mat-icon>question_answer</mat-icon> <span>Support</span>
         </div>
-        <div class="sidebar-link">
-            <button (click)="logout()">logout</button>
+        <div class="sidebar-link" (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon> <span>Logout</span>
         </div>
     </div>
     <div class="sidebar-footer">
