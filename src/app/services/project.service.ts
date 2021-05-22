@@ -22,8 +22,8 @@ export class ProjectService {
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
     //'Authorization': 'bearer ' + sessionStorage.getItem('token')
- });
- headersWithAuth = new HttpHeaders({
+  });
+  headersWithAuth = new HttpHeaders({
   'Content-Type': 'application/json',
   'Authorization': 'bearer ' + sessionStorage.getItem('token')
 });
