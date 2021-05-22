@@ -92,44 +92,28 @@ export class ProjectService {
     const req = new HttpRequest('POST', apiUrl + '/' + id + '/comments', formData, options);
     return this.http.request(req);
     }
-    
-
-
-    
   }
 
-  addProject(project: Project, file: File, sizes: any): Observable<any> {
+  addProject(name,description,author,file:File):Observable<any> {
     const formData = new FormData();
-    // formData.append('imageTitle', gallery.imageTitle);
-    // formData.append('sizes', JSON.stringify(sizes));
-    
+   
+    formData.append('description', description);
+    formData.append('fileName', file);
+    formData.append('name',name);
+    formData.append('author',author)
 
-
-    /*
-    formData.append('file', file);
-    formData.append('orders', product.orders.toString());
-    formData.append('name', product.name);
-    formData.append('price', product.price.toString());
-    formData.append('category', product.category);
-    formData.append('description', product.description);
-    formData.append('stock_quantity', JSON.stringify(product.stock_quantity));
-    formData.append('featured', JSON.stringify(product.featured));
-    */
-    //const header = new HttpHeaders();
     const params = new HttpParams();
-    /*
+
     const header = new HttpHeaders({
       Authorization: 'bearer ' + sessionStorage.getItem('token'),
     });
-    */
+
     const options = {
       params,
       reportProgress: true,
-      headers: this.headers,
+      headers: header,
     };
-    const req = new HttpRequest('POST', apiUrl, formData, options);
+    const req = new HttpRequest('POST', apiUrl , formData, options);
     return this.http.request(req);
-  }
-
-
+    }
 }

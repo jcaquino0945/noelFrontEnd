@@ -5,16 +5,16 @@
     <mat-dialog-content class="mat-typography">
         <div class="content-container">
             <p class="title">Project Title</p>
-            <input type="text" id="proj-title" class="user-input" placeholder="Project title">
+            <input type="text" id="proj-title" class="user-input" placeholder="Project title" [(ngModel)]="data.name">
         </div>
         <div class="content-container">
             <p class="title">Description</p>
-            <textarea name="" id="desc" class="user-input" cols="30" rows="5"placeholder="Project description"></textarea>
+            <textarea name="" id="desc" class="user-input" cols="30" rows="5"placeholder="Project description" [(ngModel)]="data.description"></textarea>
         </div>
 
         <div class="content-container">
             <div id="attach-container">
-                <input type="file">
+                <input type="file" (change)="onFileChange($event.target.files)" [(ngModel)]="data.file">
             </div>
         </div>
 
@@ -23,7 +23,7 @@
     <mat-dialog-actions align="end">
 
         <button mat-button class="btn btn-primary" id="cancel" mat-dialog-close>Cancel</button>
-        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial>Add Project</button>
+        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial (click)="addProject()" [disabled]="data.name == '' && data.description == ''">Add Project</button>
 
     </mat-dialog-actions>
 </div>
