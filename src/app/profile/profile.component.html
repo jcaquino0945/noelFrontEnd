@@ -1,4 +1,4 @@
-<div class='container'>
+<div class='container' *ngIf="currentUser">
     <div class='header'>
         <p>Profile</p>
     </div>
@@ -9,8 +9,10 @@
                             <div class="col-sm-4 bg-c-lite-green user-profile">
                                 <div class="card-block text-center text-white">
                                     <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
-                                    <h6 class="f-w-600">Miguel Aquino</h6>
-                                    <p>"Miggy"</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                    <h6 class="f-w-600">{{currentUser.user.name}}</h6>
+                                    <p *ngIf="currentUser.user.admin == false">User</p>
+                                    <p *ngIf="currentUser.user.admin == true">Admin</p>
+                                    <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                                 </div>
                             </div>
                             <div class="col-sm-8">
@@ -19,19 +21,15 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <p class="m-b-10 f-w-600">Email</p>
-                                            <h6 class="text-muted f-w-400">rntng@gmail.com</h6>
+                                            <h6 class="text-muted f-w-400">{{currentUser.user.email}}</h6>
                                         </div>
                                         <div class="col-sm-6">
                                             <p class="m-b-10 f-w-600">Phone</p>
-                                            <h6 class="text-muted f-w-400">98979989898</h6>
+                                            <h6 class="text-muted f-w-400">{{currentUser.user.contactNumber}}</h6>
                                         </div>
                                         <div class="col-sm-6">
-                                            <p class="m-b-10 f-w-600">Age</p>
-                                            <h6 class="text-muted f-w-400">21 Years Old</h6>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <p class="m-b-10 f-w-600">Address</p>
-                                            <h6 class="text-muted f-w-400">1-E 1st Street West Rembo Makati City</h6>
+                                            <p class="m-b-10 f-w-600">Birthday</p>
+                                            <h6 class="text-muted f-w-400">{{currentUser.user.birthday | date}}</h6>
                                         </div>
                                     </div>
                                 </div>
