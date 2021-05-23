@@ -20,15 +20,60 @@ export class AuthService {
     'Content-Type': 'application/json',
     //'Authorization': 'bearer ' + sessionStorage.getItem('token')
  });
+ headersWithAuth = new HttpHeaders({
+  'Content-Type': 'application/json',
+  'Authorization': 'bearer ' + sessionStorage.getItem('token')
+});
   constructor(private http: HttpClient,
     private processHTTPMsgService: ProcessHTTPMsgService
     ) {}
   public getUserDetails() {
     let user = JSON.parse(sessionStorage.getItem('user'));
     return user;
-
   }
 
+  getUsers(): Observable<any[]> {
+    return this.http
+      .get<any[]>(apiUrl, {headers: this.headersWithAuth})
+      .pipe(catchError(this.processHTTPMsgService.handleError));
+  }
+  updateVerification(id, status) {
+    let data = JSON.stringify({
+      "verified": status,
+    })
+
+    const params = new HttpParams();
+    let headersWithAuth = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'bearer ' + sessionStorage.getItem('token')
+    });
+    const options = {
+      params,
+      reportProgress: true,
+      headers: headersWithAuth,
+    };
+    const req = new HttpRequest('PUT', apiUrl + '/' + id ,data, options);
+    return this.http.request(req);
+  }
+
+  updateAdminStatus(id, status) {
+    let data = JSON.stringify({
+      "admin": status,
+    })
+
+    const params = new HttpParams();
+    let headersWithAuth = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'bearer ' + sessionStorage.getItem('token')
+    });
+    const options = {
+      params,
+      reportProgress: true,
+      headers: headersWithAuth,
+    };
+    const req = new HttpRequest('PUT', apiUrl + '/' + id ,data, options);
+    return this.http.request(req);
+  }
   public isAuthenticated(): Boolean {
     let token = sessionStorage.getItem('token');
     if (token) {

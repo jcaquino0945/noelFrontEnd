@@ -14,6 +14,7 @@ import { DashboardComponent, DialogContentNewProjDialog } from './dashboard/dash
 import { AdminProjectComponent } from './admin-project/admin-project.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './users/users.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { HomeComponent, DialogContentLoginDialog, DialogContentSignupDialog } from './home/home.component';
@@ -45,7 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatDialogModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],
