@@ -30,15 +30,14 @@ div.header span{
 /* CONTENT START */
 
 div.content-container .img-container {
-    /* border: 1px solid black; */
-    margin: auto;
     display: flex;
     justify-content: center;
     background: #6166f94b;
-    max-height: 350px;
+    max-height: 30vw;
 }
 div.content-container .img-container img{
     object-fit: contain;
+    
 }
 
 div.content-info,
@@ -132,6 +131,11 @@ div.action-container {
     align-items: center;
     justify-content: space-around;
 }
+div.action-container input{
+    outline: 0;
+    border: none;
+    background: transparent;
+}
 /* ======OTHERS-COMMENT======= */
 div.others-comment {
     padding-top: 3em;
@@ -149,7 +153,8 @@ div.others-comment .commenter-info span{
 }
 
 div.others-comment .content span{
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    margin-bottom: 10px;
 }
 
 .others-comment .content .comment {
@@ -176,7 +181,7 @@ div.others-comment .content span{
 }
 .others-comment .content .comment p{
     margin: 1em 0;
-
+    
 }
 
 /* CONTENT END */

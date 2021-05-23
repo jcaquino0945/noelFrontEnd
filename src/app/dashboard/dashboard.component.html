@@ -23,37 +23,17 @@
             <th>Comments</th>
           </tr>
         </thead>
-        <tbody>
-          <tr routerLink="/dashboard/project/1" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <td>Gawad Kalinga</td>
-            <td>By Noel Estrella</td>
-            <td>May 15 2021</td>
-            <td>320 Comments</td>
+        <tbody *ngIf="projects$">
+          <tr 
+          *ngFor="let project of projects$"
+          routerLink="/dashboard/project/1" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          >
+            <td> {{ project.name}} </td>
+            <td> {{ project.authorName}} </td>
+            <td> {{ project.uploaded | date }}  </td>
+            <td> {{ project.comments.length }} Comments </td>
           </tr>
-          <tr routerLink="/dashboard/project/2" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <td>Gawad Kalinga</td>
-            <td>By Noel Estrella</td>
-            <td>May 15 2021</td>
-            <td>320 Comments</td>
-          </tr>
-          <tr routerLink="/dashboard/project/3" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <td>Gawad Kalinga</td>
-            <td>By Noel Estrella</td>
-            <td>May 15 2021</td>
-            <td>320 Comments</td>
-          </tr>
-          <tr>
-            <td>Gawad Kalinga</td>
-            <td>By Noel Estrella</td>
-            <td>May 15 2021</td>
-            <td>320 Comments</td>
-          </tr>
-          <tr>
-            <td>Gawad Kalinga</td>
-            <td>By Noel Estrella</td>
-            <td>May 15 2021</td>
-            <td>320 Comments</td>
-          </tr>
+          
         </tbody>
     </table>
 

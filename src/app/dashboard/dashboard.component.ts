@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ProjectService } from '../services/project.service';
+import { Project } from '../models/project';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,13 +12,20 @@ import { ProjectService } from '../services/project.service';
 })
 export class DashboardComponent implements OnInit {
   currentUser;
+  projects$: Project[];
 
   constructor(
     public dialog: MatDialog,
-    private authService: AuthService) { }
+    private projectService: ProjectService,
+    private authService: AuthService
+    ) { }
 
   ngOnInit(): void {
     this.currentUser = this.authService.getUserDetails();
+
+    this.projectService.getProjects().subscribe(
+      (projects$) => (this.projects$ = projects$)
+    )
   }
 
   openDialog() {

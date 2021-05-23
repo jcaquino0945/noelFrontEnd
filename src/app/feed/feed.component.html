@@ -15,11 +15,11 @@
         <div class="frame" *ngFor="let project of projects$">
             <div class='feed-content' [routerLink]="['/feed/project', project._id]"routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <div class='feed-img'>
-                    <img src="{{project.fileName}}" alt="">
+                    <img src="{{project.fileName}}" alt="{{project.name}}">
                 </div>
 
                 <div class="details">
-                    <span> {{project.name}} </span>
+                    <p> {{project.name}} </p>
                     <span> {{project.uploaded | date}} </span>
                 </div>
             </div>
