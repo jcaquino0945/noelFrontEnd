@@ -5,34 +5,34 @@
     <mat-dialog-content class="mat-typography">
         <div class="content-container">
             <p class="field-title">Full Name: <span>*</span></p>
-            <input type="text" id="fullName" class="user-input" required>
+            <input type="text" id="fullName" class="user-input" required [(ngModel)]="user.name">
         </div>
         <div class="content-container single-row">
             <div class="row">
-                <p class="field-title">Age: <span>*</span></p>
-                <input type="text" id="age" class="user-input" required>
+                <p class="field-title">Birthday: <span>*</span></p>
+                <input type="text" id="age" class="user-input" required [(ngModel)]="user.birthday">
             </div>
             <div class="row">
                 <p class="field-title">Contact Number: <span>*</span></p>
-                <input type="text" id="contactNum" class="user-input" required>
+                <input type="text" id="contactNum" class="user-input" required [(ngModel)]="user.contactNumber">
             </div>
         </div>
         <div class="content-container">
             <p class="field-title">Email Address: <span>*</span></p>
-            <input type="email" id="emailAddress" class="user-input" required>
+            <input type="email" id="emailAddress" class="user-input" required [(ngModel)]="user.email">
         </div>
         <div class="content-container">
             <p class="field-title">Username: <span>*</span></p>
-            <input type="text" id="uname" class="user-input" required>
+            <input type="text" id="uname" class="user-input" required [(ngModel)]="user.username">
         </div>
         <div class="content-container">
             <p class="field-title">Password: <span>*</span></p>
-            <input type="password" id="uname" class="user-input" required>
+            <input type="password" id="uname" class="user-input" required [(ngModel)]="user.password">
         </div>
 
     </mat-dialog-content>
 
     <mat-dialog-actions align="center">
-        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial>SIGN UP</button>
+        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial (click)="register()">SIGN UP</button>
     </mat-dialog-actions>
 </div>
