@@ -180,8 +180,15 @@ div.others-comment .content span{
     max-height: 250px;
 }
 .others-comment .content .comment p{
-    margin: 1em 0;
+    margin-left: 1em ;
     
 }
-
+div.others-comment .comment .media {
+    margin: 2em;
+    margin-top: 0;
+}
+div.others-comment .comment .media > *{
+    object-fit: contain;
+    height: 250px;
+}
 /* CONTENT END */

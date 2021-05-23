@@ -47,10 +47,11 @@
             <div class="others-comment">
                 <div class="content" *ngFor="let comment of project.comments">
                     <div class="commenter-info">
-                        <span>{{comment.authorName}}</span>
+                        <span>{{comment.authorName}}:</span>
                     </div>
-                    <p>{{comment.comment}}</p>
                     <div class="comment">
+                        <p>{{comment.comment}}</p>
+
                         <div class="media" *ngIf="comment.fileType == 'video/mp4'">
                             <video controls class="vid">
                                 <source src="{{comment.fileName}}" type="video/mp4" style="height: auto; width: 80px;">

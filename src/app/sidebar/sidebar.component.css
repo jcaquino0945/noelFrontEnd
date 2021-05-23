@@ -64,3 +64,9 @@
     position: absolute;
     bottom: 0;
 }
+
+.active {
+    border-left: 6px solid #6167F9;
+    background-color: #ebebeb;
+    color: #6167F9;
+}
