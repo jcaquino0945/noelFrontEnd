@@ -11,6 +11,14 @@ div.container {
     padding-top: 1.8em;
     margin: auto;
 }
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: green !important;
+}
+.mat-slide-toggle-bar, .mat-slide-toggle-thumb {
+    transition: all 80ms linear;
+    transition-property: background-color;
+    transition-delay: 50ms;
+}
 
 /* HEADER START */
 div.header {
@@ -71,7 +79,3 @@ tbody tr:hover {
     margin: 0;
 }
 
-td .btn-outline-danger {
-    padding: 0 1em;
-}
-/* TABLE END */

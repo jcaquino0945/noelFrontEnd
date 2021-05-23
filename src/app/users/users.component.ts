@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-users',
@@ -6,10 +7,51 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-
-  constructor() { }
+  users$: any[];
+  currentUser;
+  errMess: string;
+  //user = {verified:''}
+  constructor(private authService: AuthService
+    ) { }
 
   ngOnInit(): void {
+    this.authService.getUsers().subscribe(
+      (users$) => (this.users$ = users$),
+      (errmess) => (this.errMess = <any>errmess)
+    );
+    this.currentUser = this.authService.getUserDetails();
   }
 
+  updateVerificationStatus(id,value) {
+    if (window.confirm("Change verification status of user?")) {
+      if (value.checked == true) {
+        window.alert("User is now verified!");
+        this.authService.updateVerification(id,value.checked).subscribe((res: any) => {
+          console.log('verified!')
+        })
+      } 
+      if (value.checked == false) {
+        window.alert("User is not verified!");
+        this.authService.updateVerification(id,value.checked).subscribe((res: any) => {
+          console.log('not verified!')
+        })
+      }
+    } 
+   }
+   updateAdminStatus(id,value) {
+    if (window.confirm("Change admin status of user?")) {
+      if (value.checked == true) {
+        window.alert("User is now an Admin!");
+        this.authService.updateAdminStatus(id,value.checked).subscribe((res: any) => {
+          console.log('verified!')
+        })
+      } 
+      if (value.checked == false) {
+        window.alert("User is now a Member!");
+        this.authService.updateAdminStatus(id,value.checked).subscribe((res: any) => {
+          console.log('not verified!')
+        })
+      }
+    } 
+   }
 }

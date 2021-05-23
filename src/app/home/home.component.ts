@@ -55,8 +55,12 @@ export class DialogContentLoginDialog {
     this.authService
     .validate(this.user.username, this.user.password)
     .then((response) => {
+      if (response['token'] == false && response['user'] == false) {
+        window.alert('User is not verified yet! Wait for admin to verify your account');
+      } else {
       this.authService.setUserInfo(response['token'],response['user']);
       this.router.navigate(['feed']);
+      }
     })
     .catch((err) => {
       window.alert('Wrong username/password');
@@ -83,4 +87,23 @@ export class DialogContentLoginDialog {
   templateUrl: './signup/signup.html',
   styleUrls: ['./signup/signup.css']
 })
-export class DialogContentSignupDialog {}
+export class DialogContentSignupDialog {
+  user = { username: '', password: '', name: '', contactNumber: '', birthday: '', email: '' };
+  errMess: string;
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  register() {
+    this.authService.register(this.user.username,this.user.password,this.user.name,this.user.contactNumber,this.user.birthday,this.user.email).subscribe((res: any) => {
+      window.alert('Registered! Wait for admin to verify your account before you can login!');
+      (errmess) => (this.errMess = <any>errmess);
+    },
+    (err: any) => {
+      console.log(err);
+    })
+  }
+
+}
