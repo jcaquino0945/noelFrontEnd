@@ -20,6 +20,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { HomeComponent, DialogContentLoginDialog, DialogContentSignupDialog } from './home/home.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SupportComponent } from './support/support.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     DialogContentLoginDialog,
     DialogContentSignupDialog,
     UsersComponent,
-    DialogLogoutDialog
+    DialogLogoutDialog,
+    SupportComponent
   ],
   imports: [
     BrowserModule,
