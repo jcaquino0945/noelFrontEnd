@@ -13,6 +13,7 @@ import { Project } from '../models/project';
 export class DashboardComponent implements OnInit {
   currentUser;
   projects$: Project[];
+  errMess: string;
 
   constructor(
     public dialog: MatDialog,
@@ -27,6 +28,20 @@ export class DashboardComponent implements OnInit {
       (projects$) => (this.projects$ = projects$)
     )
   }
+  deleteProject(projId,author) {
+    if (window.confirm("Are you sure you want to delete your project?")) {
+      this.projectService.deleteProject(projId,this.currentUser.user._id).subscribe((res: any) => {
+        console.log('project deleted');
+        (errmess) => (this.errMess = <any>errmess);
+      },
+      (err: any) => {
+        console.log(err);
+      })
+      this.projectService.getProjects().subscribe(
+        (projects$) => (this.projects$ = projects$)
+      )
+    }
+}
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogContentNewProjDialog);
@@ -63,6 +78,7 @@ export class DialogContentNewProjDialog implements OnInit {
       console.log(this.data.description)
       console.log(this.data.file)
       this.projectService.addProject(this.data.name,this.data.description,this.currentUser.user._id,this.data.file).subscribe((res: any) => {
+        this.router.navigate(['feed']);
         console.log('success');
         (errmess) => (this.errMess = <any>errmess);
       },
@@ -71,6 +87,8 @@ export class DialogContentNewProjDialog implements OnInit {
       })
       
   }
+
+  
 
   onFileChange(files: FileList) {
     this.data.file=files[0];

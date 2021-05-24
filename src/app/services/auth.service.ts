@@ -95,6 +95,21 @@ export class AuthService {
       })
       .toPromise();
   }
+  public deleteUser(userId) {
+    const params = new HttpParams();
+
+    const header = new HttpHeaders({
+      Authorization: 'bearer ' + sessionStorage.getItem('token'),
+    });
+
+    const options = {
+      params,
+      reportProgress: true,
+      headers: header,
+    };
+    const req = new HttpRequest('DELETE', apiUrl + '/' + userId , options);
+    return this.http.request(req);
+  }
   public register(username,password,name,contactNumber,birthday,email):Observable<any> {
     console.log( username)
     console.log( password)

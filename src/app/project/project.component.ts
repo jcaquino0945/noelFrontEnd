@@ -124,7 +124,6 @@ console.log(this.file)
     }
     else {
       this.projectService.addComment(id,this.comment.comment,author,this.file).subscribe((res: any) => {
-        window.alert('Comment uploaded!')
         if (this.file.type.toString() == 'video/mp4') {
           this.projectService.updateProjectVideo(id,this.projectVideos + 1).subscribe((res: any) => { 
             console.log('video uploaded')
@@ -176,6 +175,49 @@ console.log(this.file)
     console.log(this.file)
     window.alert('File uploaded!')
       
+  }
+
+  deleteComment(commentId,userId,projectId,fileType) {
+    console.log(commentId)
+    console.log(userId)
+    console.log(projectId)
+    if (window.confirm("Are you sure you want to delete your comment?")) {
+      this.projectService.deleteComment(commentId,userId,projectId).subscribe((res: any) => { 
+        console.log('comment deleted')
+        if (fileType == 'image/jpeg' || fileType == 'image/png') {
+          this.projectService.updateProjectImage(projectId,this.projectImages - 1).subscribe((res: any) => { 
+            console.log('image deleted')
+          })
+        }
+        if (fileType == 'video/mp4') {
+          this.projectService.updateProjectVideo(projectId,this.projectVideos - 1).subscribe((res: any) => { 
+            console.log('video deleted')
+          })
+        }
+        if (fileType == 'comment' || fileType == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || fileType == 'application/msword' || fileType == 'text/plain') {
+          this.projectService.updateProjectText(projectId,this.projectText - 1).subscribe((res: any) => { 
+            console.log('text file/comment deleted')
+          })
+        }
+        this.projectService
+        .getProjectIds()
+        .subscribe((projectIds) => (this.projectIds = projectIds));
+      this.route.params
+        .pipe(
+          switchMap((params: Params) => {
+            return this.projectService.getProject(params['id']);
+          })
+        )
+        .subscribe(
+          (project) => {
+            this.project = project;
+          },
+          (err) => console.log(err)
+        );
+      (errmess) => (this.errMess = <any>errmess);
+      })
+    }
+    
   }
 
 }

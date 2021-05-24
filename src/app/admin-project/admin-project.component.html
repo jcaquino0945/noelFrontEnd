@@ -50,7 +50,6 @@
                     <th>Date Added</th>
                     <th>File</th>
                     <th>Type of File</th>
-                    <th>Action</th>
                 </tr>
             </thead>
             <tbody id="tbl-content" *ngIf="projects$">
@@ -61,7 +60,6 @@
                     <td *ngIf="comment.fileName"><a href="{{comment.fileName}}">File here</a></td>
                     <td *ngIf="!comment.fileName">No File</td>
                     <td>{{comment.fileType}}</td>
-                    <td> <mat-icon> <input type="submit" value="close" id="close"> </mat-icon> </td>
                 </tr>
             </tbody>
         </table>

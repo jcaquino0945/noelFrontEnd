@@ -48,7 +48,7 @@
                 <div class="content" *ngFor="let comment of project.comments">
                     <div class="commenter-info">
                         <span>{{comment.authorName}}:</span>
-                        <mat-icon *ngIf='currentUser.user.name == comment.authorName'> <input type="submit" value="close"> </mat-icon>
+                        <mat-icon *ngIf='currentUser.user.name == comment.authorName'> <input type="submit" value="close" (click)="deleteComment(comment._id,currentUser.user._id,project._id,comment.fileType)"> </mat-icon>
                     </div>
                     <div class="comment">
                         <p>{{comment.comment}}</p>

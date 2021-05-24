@@ -115,6 +115,27 @@ export class ProjectService {
       .get<Project>(apiUrl + '/' + id)
       .pipe(catchError(this.processHTTPMsgService.handleError));
   }
+  
+  
+  deleteComment(commentId,userId,projectId) {
+    let data = JSON.stringify({
+      "_id": userId,
+    })
+
+    const params = new HttpParams();
+    let headersWithAuth = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'bearer ' + sessionStorage.getItem('token')
+    });
+    const options = {
+      params,
+      reportProgress: true,
+      headers: headersWithAuth,
+    };
+
+    const req = new HttpRequest('DELETE', apiUrl + '/' + projectId + '/comments/' + commentId,data, options);
+    return this.http.request(req);
+  }
 
   getProjectIds(): Observable<number[] | any> {
     return this.getProjects()
@@ -164,6 +185,22 @@ export class ProjectService {
     const req = new HttpRequest('POST', apiUrl + '/' + id + '/comments', formData, options);
     return this.http.request(req);
     }
+  }
+  deleteProject(id,author) {
+    const params = new HttpParams();
+
+    const header = new HttpHeaders({
+      Authorization: 'bearer ' + sessionStorage.getItem('token'),
+    });
+
+    const options = {
+      params,
+      reportProgress: true,
+      headers: header,
+    };
+    const req = new HttpRequest('DELETE', apiUrl + '/' + id , options);
+    return this.http.request(req);
+
   }
 
   addProject(name,description,author,file:File):Observable<any> {

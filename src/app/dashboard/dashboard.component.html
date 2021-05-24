@@ -36,7 +36,7 @@
                   [routerLink]="['/dashboard/project/', project._id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
                   type="submit" value="edit" id="close"
                 >  
-                <input type="submit" value="close" id="close">
+                <input type="submit" value="close" id="close" (click)="deleteProject(project._id,currentUser.user._id)">
               </mat-icon>
             </td>
           </tr>

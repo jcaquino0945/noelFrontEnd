@@ -21,7 +21,7 @@
                 <td><mat-slide-toggle color="primary" [(ngModel)]="user.admin" (change)="updateAdminStatus(user._id,$event)"></mat-slide-toggle></td>
                 <td> <mat-slide-toggle color="primary" [(ngModel)]="user.verified" (change)="updateVerificationStatus(user._id,$event)"></mat-slide-toggle>
                 </td>
-                <td> <mat-icon>delete</mat-icon> </td>
+                <td> <mat-icon (click)="deleteUser(user._id)">delete</mat-icon> </td>
             </tr>
         </tbody>
     </table>

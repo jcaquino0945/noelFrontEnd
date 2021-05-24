@@ -54,4 +54,15 @@ export class UsersComponent implements OnInit {
       }
     } 
    }
+   deleteUser(userId) {
+    if (window.confirm("Are you sure you want to delete your comment?")) {
+      this.authService.deleteUser(userId).subscribe((res: any)=> {
+        window.alert('User Deleted');
+        this.authService.getUsers().subscribe(
+          (users$) => (this.users$ = users$),
+          (errmess) => (this.errMess = <any>errmess)
+        );
+      })
+    }
+   }
 }
