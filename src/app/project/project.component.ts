@@ -164,7 +164,7 @@ console.log(this.file)
       )
     }
     window.alert('Comment uploaded!')
-
+    window.location.reload();
   }
 
   onFileChange(files: FileList) {

@@ -21,6 +21,7 @@ import { HomeComponent, DialogContentLoginDialog, DialogContentSignupDialog } fr
 
 import { HttpClientModule } from '@angular/common/http';
 import { SupportComponent } from './support/support.component';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { SupportComponent } from './support/support.component';
     DialogContentSignupDialog,
     UsersComponent,
     DialogLogoutDialog,
-    SupportComponent
+    SupportComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

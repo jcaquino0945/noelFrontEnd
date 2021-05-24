@@ -75,7 +75,14 @@ tbody tr {
 tbody tr:hover {
     background-color: #bebffd;
 }
-.form-switch input {
-    margin: 0;
+.table td #close {
+    border: 0;
+    background: transparent;
+    color: #df4949;
+    background: #ffe4e4;
+    transition: all 0.3s ease-in-out 0s;
 }
-
+.table td #close:hover {
+    color: #ffe4e4;
+    background: #ff2222;
+}
