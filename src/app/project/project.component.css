@@ -192,3 +192,17 @@ div.others-comment .comment .media > *{
     height: 250px;
 }
 /* CONTENT END */
+
+.commenter-info {
+    display: flex;
+    justify-content: space-between;
+}
+.commenter-info mat-icon input{
+    outline: none;
+    border: 0;
+    background: transparent;
+    transition: all 0.1s ease 0s;
+}
+.commenter-info mat-icon input:hover {
+    color: rgb(255, 34, 34);
+}

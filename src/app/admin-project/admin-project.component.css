@@ -80,6 +80,7 @@ div.count-track {
 /* TABLE START */
 div.container .table-container {
     padding: 2em 0;
+    text-align: center;
 }
 div.container .table tbody tr {
     transition: all 0.3s ease 0s;
@@ -87,5 +88,15 @@ div.container .table tbody tr {
 div.container .table tbody tr:hover {
     background-color: #a7a9ff;
     /* background-color: #757af8; */
+}
+
+.table-container #tbl-content #close{
+    outline: none;
+    border: 0;
+    background: transparent;
+    transition: all 0.1s ease 0s;
+}
+.table-container #tbl-content #close:hover{
+    color: rgb(255, 34, 34);
 }
 /* TABLE END */

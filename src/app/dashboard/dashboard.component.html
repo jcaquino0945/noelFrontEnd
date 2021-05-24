@@ -21,17 +21,24 @@
             <th>Author</th>
             <th>Date Posted</th>
             <th>Comments</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody *ngIf="projects$">
-          <tr 
-          *ngFor="let project of projects$"
-          [routerLink]="['/dashboard/project/', project._id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-          >
+          <tr *ngFor="let project of projects$">
             <td> {{ project.name}} </td>
             <td> {{ project.authorName}} </td>
             <td> {{ project.uploaded | date }}  </td>
             <td> {{ project.comments.length }} Comments </td>
+            <td id="actions">
+              <mat-icon> 
+                <input 
+                  [routerLink]="['/dashboard/project/', project._id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                  type="submit" value="edit" id="close"
+                >  
+                <input type="submit" value="close" id="close">
+              </mat-icon>
+            </td>
           </tr>
           
         </tbody>

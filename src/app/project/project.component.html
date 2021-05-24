@@ -48,6 +48,7 @@
                 <div class="content" *ngFor="let comment of project.comments">
                     <div class="commenter-info">
                         <span>{{comment.authorName}}:</span>
+                        <mat-icon *ngIf='currentUser.user.name == comment.authorName'> <input type="submit" value="close"> </mat-icon>
                     </div>
                     <div class="comment">
                         <p>{{comment.comment}}</p>
@@ -69,8 +70,8 @@
                         <div class="media" *ngIf="comment.fileType == 'audio/mpeg'">
                             <audio controls>
                                 <source src="{{comment.fileName}}" type="audio/mpeg">
-                              Your browser does not support the audio element.
-                              </audio>
+                                Your browser does not support the audio element.
+                            </audio>
                         </div>
                         <div *ngIf="comment.fileType == 'application/pdf'" style="height: auto !important;">
                             <p style="text-decoration: underline;">PDF not supported</p>
