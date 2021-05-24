@@ -118,8 +118,13 @@ console.log(this.file)
         console.log(err);
       }
       )
-    } else {
+    }
+    if (this.file.type.toString() == 'application/pdf') {
+      window.alert('Sorry PDF is not supported')
+    }
+    else {
       this.projectService.addComment(id,this.comment.comment,author,this.file).subscribe((res: any) => {
+        window.alert('Comment uploaded!')
         if (this.file.type.toString() == 'video/mp4') {
           this.projectService.updateProjectVideo(id,this.projectVideos + 1).subscribe((res: any) => { 
             console.log('video uploaded')
@@ -163,7 +168,6 @@ console.log(this.file)
       }
       )
     }
-    window.alert('Comment uploaded!')
 
   }
 

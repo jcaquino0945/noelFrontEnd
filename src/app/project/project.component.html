@@ -72,6 +72,9 @@
                               Your browser does not support the audio element.
                               </audio>
                         </div>
+                        <div *ngIf="comment.fileType == 'application/pdf'" style="height: auto !important;">
+                            <p style="text-decoration: underline;">PDF not supported</p>
+                        </div>
                     </div>
                 <hr>
                 </div>
