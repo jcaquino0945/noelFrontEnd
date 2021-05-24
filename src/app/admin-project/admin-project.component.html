@@ -36,7 +36,7 @@
             <span id='text-count'>{{project.textFiles}}</span>
         </div>
         <div class="text-count-container">
-            <span>Total Comments </span>
+            <span>Total Comments: </span>
             <span id='text-count'>{{project.comments.length}}</span>
         </div>
     </div>
@@ -50,9 +50,10 @@
                     <th>Date Added</th>
                     <th>File</th>
                     <th>Type of File</th>
+                    <th>Action</th>
                 </tr>
             </thead>
-            <tbody *ngIf="projects$">
+            <tbody id="tbl-content" *ngIf="projects$">
                 <tr *ngFor="let comment of project.comments">
                     <td>{{comment.authorName}}</td>
                     <td>{{comment.comment}}</td>
@@ -60,6 +61,7 @@
                     <td *ngIf="comment.fileName"><a href="{{comment.fileName}}">File here</a></td>
                     <td *ngIf="!comment.fileName">No File</td>
                     <td>{{comment.fileType}}</td>
+                    <td> <mat-icon> <input type="submit" value="close" id="close"> </mat-icon> </td>
                 </tr>
             </tbody>
         </table>

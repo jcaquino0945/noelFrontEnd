@@ -59,4 +59,10 @@ tbody tr:hover {
     /* background-color: #757af8; */
     background-color: #a7a9ff;
 }
+
+.table tbody tr {
+}
+.table tbody #actions input{
+    margin-right: 5px;
+}
 /* TABLE END */
