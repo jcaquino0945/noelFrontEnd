@@ -32,6 +32,78 @@ export class ProjectService {
     private processHTTPMsgService: ProcessHTTPMsgService
   ) { }
 
+  updateProjectVideo(id,value):Observable<any> {
+    let data = JSON.stringify({
+      "videos": value,
+    })
+
+    const params = new HttpParams();
+    let headersWithAuth = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'bearer ' + sessionStorage.getItem('token')
+    });
+    const options = {
+      params,
+      reportProgress: true,
+      headers: headersWithAuth,
+    };
+    const req = new HttpRequest('PUT', apiUrl + '/' + id ,data, options);
+    return this.http.request(req);
+  }
+  updateProjectAudio(id,value):Observable<any> {
+    let data = JSON.stringify({
+      "audio": value,
+    })
+
+    const params = new HttpParams();
+    let headersWithAuth = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'bearer ' + sessionStorage.getItem('token')
+    });
+    const options = {
+      params,
+      reportProgress: true,
+      headers: headersWithAuth,
+    };
+    const req = new HttpRequest('PUT', apiUrl + '/' + id ,data, options);
+    return this.http.request(req);
+  }
+  updateProjectImage(id,value):Observable<any> {
+    let data = JSON.stringify({
+      "images": value,
+    })
+
+    const params = new HttpParams();
+    let headersWithAuth = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'bearer ' + sessionStorage.getItem('token')
+    });
+    const options = {
+      params,
+      reportProgress: true,
+      headers: headersWithAuth,
+    };
+    const req = new HttpRequest('PUT', apiUrl + '/' + id ,data, options);
+    return this.http.request(req);
+  }
+  updateProjectText(id,value):Observable<any> {
+    let data = JSON.stringify({
+      "textFiles": value,
+    })
+
+    const params = new HttpParams();
+    let headersWithAuth = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'bearer ' + sessionStorage.getItem('token')
+    });
+    const options = {
+      params,
+      reportProgress: true,
+      headers: headersWithAuth,
+    };
+    const req = new HttpRequest('PUT', apiUrl + '/' + id ,data, options);
+    return this.http.request(req);
+  }
   getProjects(): Observable<Project[]> {
     return this.http
       .get<Project[]>(apiUrl)

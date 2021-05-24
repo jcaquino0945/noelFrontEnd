@@ -46,6 +46,10 @@ export class ProjectComponent implements OnInit {
   errMess: string;
   currentUser;
   labelImport: ElementRef;
+  projectVideos;
+  projectAudio;
+  projectImages;
+  projectText;
 
   constructor(
     private projectService: ProjectService,
@@ -70,6 +74,15 @@ export class ProjectComponent implements OnInit {
       .subscribe(
         (project) => {
           this.project = project;
+          this.projectAudio = project.audio;
+          this.projectImages = project.images;
+          this.projectVideos = project.videos;
+          this.projectText = project.textFiles;
+          console.log(this.projectAudio)
+          console.log(this.projectImages)
+          console.log(this.projectVideos)
+          console.log(this.projectText)
+
         },
         (err) => console.log(err)
       );
@@ -77,10 +90,13 @@ export class ProjectComponent implements OnInit {
   }
 
   submitComment(id,author) {
-
+console.log(this.file)
         
     if (!this.file) {
       this.projectService.addComment(id,this.comment.comment,author).subscribe((res: any) => {
+        this.projectService.updateProjectText(id,this.projectText + 1).subscribe((res: any) => { 
+          console.log('comment uploaded')
+        })
         this.projectService
       .getProjectIds()
       .subscribe((projectIds) => (this.projectIds = projectIds));
@@ -104,7 +120,27 @@ export class ProjectComponent implements OnInit {
       )
     } else {
       this.projectService.addComment(id,this.comment.comment,author,this.file).subscribe((res: any) => {
-        
+        if (this.file.type.toString() == 'video/mp4') {
+          this.projectService.updateProjectVideo(id,this.projectVideos + 1).subscribe((res: any) => { 
+            console.log('video uploaded')
+          })
+        }
+        if (this.file.type.toString() == 'image/png' || this.file.type.toString() == 'image/jpeg') {
+          this.projectService.updateProjectImage(id,this.projectImages + 1).subscribe((res: any) => { 
+            console.log('image uploaded')
+          })
+        }
+        if (this.file.type.toString() == 'audio/mpeg') {
+          this.projectService.updateProjectAudio(id,this.projectAudio + 1).subscribe((res: any) => { 
+            console.log('audio uploaded')
+          })
+        }
+        if (this.file.type.toString() == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || this.file.type.toString() == 'application/msword' || this.file.type.toString() == 'text/plain') {
+          this.projectService.updateProjectText(id,this.projectText + 1).subscribe((res: any) => { 
+            console.log('text uploaded')
+          })
+        }
+        //if (this.file)
         this.projectService
       .getProjectIds()
       .subscribe((projectIds) => (this.projectIds = projectIds));

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="project">
 
     <!-- feed header -->
     <div class='header'>
@@ -8,38 +8,36 @@
 
     <div class='content-container'>
         <div class='img-container'>
-            <img src="../../assets/imgs/filler.png" alt="">
+            <img src="{{project.fileName}}" alt="">
         </div>
 
         <div class='content-info'>
-            <p>Content Title</p>
-            <p>Author</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Dignissimos, sit 
-                aperiam. A et aliquid cumque quasi 
-                neque officiis numquam eligendi 
-                perferendis debitis incidunt hic, ipsa 
-                sint dolor explicabo quaerat iste!</p>
+            <p>{{project.name}}</p>
+            <p>{{project.authorName}}</p>
+            <p>{{project.description}}</p>
         </div>
     </div>
 
     <div class="count-track">
         <div class="img-count-container">
             <span>Images Uploaded: </span>
-            <span id='img-count'>65</span>
+            <span id='img-count'>{{project.images}}</span>
         </div>
         <div class="audio-count-container">
             <span>Audio Uploaded: </span>
-            <span id='audio-count'>20</span>
+            <span id='audio-count'>{{project.audio}}</span>
         </div>
         <div class="video-count-container">
-            <span>Video Uploaded: </span>
-            <span id='video-count'>8</span>
+            <span>Videos Uploaded: </span>
+            <span id='video-count'>{{project.videos}}</span>
         </div>
         <div class="text-count-container">
             <span>Text Uploaded: </span>
-            <span id='text-count'>86</span>
+            <span id='text-count'>{{project.textFiles}}</span>
+        </div>
+        <div class="text-count-container">
+            <span>Total Comments </span>
+            <span id='text-count'>{{project.comments.length}}</span>
         </div>
     </div>
 
@@ -55,15 +53,13 @@
                 </tr>
             </thead>
             <tbody *ngIf="projects$">
-                <tr 
-                *ngFor="let project of projects$" 
-                routerLink="/dashboard/project/1" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-                >
-                    <td> {{ project.authorName}} </td>
-                    <td>  </td>
-                    <td> {{ project.uploaded | date }} </td>
-                    <td>file.jpg</td>
-                    <td>jpg</td>
+                <tr *ngFor="let comment of project.comments">
+                    <td>{{comment.authorName}}</td>
+                    <td>{{comment.comment}}</td>
+                    <td>{{comment.uploaded | date}}</td>
+                    <td *ngIf="comment.fileName"><a href="{{comment.fileName}}">File here</a></td>
+                    <td *ngIf="!comment.fileName">No File</td>
+                    <td>{{comment.fileType}}</td>
                 </tr>
             </tbody>
         </table>

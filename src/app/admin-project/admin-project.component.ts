@@ -3,7 +3,8 @@ import { ProjectService } from '../services/project.service';
 import { Project } from '../models/project';
 import { Params, ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
-
+import { Location } from '@angular/common';
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-admin-project',
   templateUrl: './admin-project.component.html',
@@ -13,13 +14,17 @@ export class AdminProjectComponent implements OnInit {
   projects$: Project[];
   project: Project;
   projectIds: string[];
+  currentUser;
 
   constructor(
     private projectService: ProjectService,
     private route: ActivatedRoute,
+    private authService: AuthService
     ) { }
 
   ngOnInit(): void {
+    this.currentUser = this.authService.getUserDetails();
+
     this.projectService.getProjectIds().subscribe(
       (projectIds) => (this.projectIds = projectIds)
     )

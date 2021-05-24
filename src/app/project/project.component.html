@@ -65,7 +65,12 @@
                         <div class="media" *ngIf="comment.fileType == 'application/msword'">
                             <a href="{{comment.fileName}}">file here (access in ms word)</a>
                         </div>
-                        
+                        <div class="media" *ngIf="comment.fileType == 'audio/mpeg'">
+                            <audio controls>
+                                <source src="{{comment.fileName}}" type="audio/mpeg">
+                              Your browser does not support the audio element.
+                              </audio>
+                        </div>
                     </div>
                 <hr>
                 </div>

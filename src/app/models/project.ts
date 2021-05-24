@@ -10,5 +10,9 @@ export class Project {
     description:string;
     uploaded:Date;
     comments: Comment[];
+    videos:Number;
+    audio:Number;
+    images:Number;
+    textFiles:Number;
   }
   

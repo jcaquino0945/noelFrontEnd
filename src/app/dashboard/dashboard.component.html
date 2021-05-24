@@ -26,7 +26,7 @@
         <tbody *ngIf="projects$">
           <tr 
           *ngFor="let project of projects$"
-          routerLink="/dashboard/project/1" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          [routerLink]="['/dashboard/project/', project._id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           >
             <td> {{ project.name}} </td>
             <td> {{ project.authorName}} </td>
