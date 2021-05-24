@@ -167,7 +167,6 @@ console.log(this.file)
       }
       )
     }
-
   }
 
   onFileChange(files: FileList) {

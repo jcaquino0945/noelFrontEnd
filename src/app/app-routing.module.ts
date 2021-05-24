@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 import { UsersComponent } from './users/users.component';
 import { SupportComponent } from './support/support.component';
+import { MessagesComponent } from './messages/messages.component';
 
 const routes: Routes = [
   { path: 'feed', component: FeedComponent,canActivate : [AuthGuard]},
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'dashboard/project/:id', component: AdminProjectComponent,canActivate : [AuthGuard] },
   { path: 'feed/project/:id', component: ProjectComponent,canActivate : [AuthGuard] },
   { path: 'users', component: UsersComponent,canActivate : [AuthGuard] },
+  { path: 'messages', component: MessagesComponent,canActivate : [AuthGuard] },
   { path: 'support', component: SupportComponent, canActivate : [AuthGuard]},
   
   { path: '',   redirectTo: '/feed', pathMatch: 'full' }, // redirect to `feed`

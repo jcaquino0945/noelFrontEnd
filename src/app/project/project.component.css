@@ -201,7 +201,7 @@ div.others-comment .comment .media > *{
     outline: none;
     border: 0;
     background: transparent;
-    transition: all 0.1s ease 0s;
+    transition: all 0.3s ease-in-out 0s;
 }
 .commenter-info mat-icon input:hover {
     color: rgb(255, 34, 34);
