@@ -10,7 +10,7 @@ import {
 import { catchError, map } from 'rxjs/operators';
 import { ProcessHTTPMsgService } from './process-httpmsg.service';
 
-const apiUrl = 'http://localhost:3000/users'; //api url from backend service
+const apiUrl = '/users'; //api url from backend service
 
 @Injectable({
   providedIn: 'root'

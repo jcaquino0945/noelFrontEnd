@@ -13,7 +13,7 @@ import { Project } from '../models/project';
 import { Comment } from '../models/comment';
 
 
-const apiUrl = 'http://localhost:3000/projects'; //api url from backend service
+const apiUrl = '/projects'; //api url from backend service
 @Injectable({
   providedIn: 'root'
 })
