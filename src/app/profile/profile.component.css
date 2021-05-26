@@ -1,15 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 div.container {
-    height: 100%;
     width: 90%;
+    padding-top: 2em;
     margin: auto;
 }
+
+/* HEADER START */
 div.header {
-    margin: 3em 2em;
+    margin: 0 2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 2.5em;
 }
-
 
 div.header p {
     font-size: 2em ;
@@ -18,7 +25,13 @@ div.header p {
     display: inline;
     margin: 0;
 }
+/* HEADER END */
 
+/* PROFILE INFO START */
+div.row.container { 
+    padding: 5em 0;
+
+}
 .user-card-full {
     overflow: hidden
 }
@@ -46,12 +59,12 @@ div.header p {
 }
 
 .bg-c-lite-green {
-    background: -webkit-gradient(linear, left top, right top, from(#2543ee), to(#7f8ee7));
-    background: linear-gradient(to right, #2543ee, #7f8ee7)
+    background: rgb(158, 206, 154);
+    background: linear-gradient(32deg, rgba(158,206,154,1) 0%, rgba(28,82,83,.8) 100%);
 }
 
 .user-profile {
-    padding: 20px 0
+    padding: 20px 0;
 }
 
 .card-block {

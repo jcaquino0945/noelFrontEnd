@@ -20,12 +20,18 @@ div.container {
     transition-delay: 50ms;
 }
 
+div.container {
+    width: 90%;
+    padding-top: 2em;
+    margin: auto;
+}
 /* HEADER START */
 div.header {
     margin: 0 2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 2.5em;
 }
 
 div.header p {
@@ -37,10 +43,10 @@ div.header p {
 }
 /* HEADER END */
 
+/* TABLE START */
 table.table {
     margin-top: 3em ;
 }
-/* TABLE START */
 
 table.table {
     text-align: center;
@@ -49,31 +55,13 @@ table.table {
     color: #bd2d2d;
 }
 
-div.container {
-    width: 90%;
-    margin: auto;
-}
-div.header {
-    margin: 3em 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-div.header p {
-    font-size: 2em ;
-    font-weight: bold;
-    letter-spacing: .02em;
-    display: inline;
-    margin: 0;
-}
 
 
 tbody tr {
     transition: all 0.3s ease 0s;
 }
 tbody tr:hover {
-    background-color: #bebffd;
+    background-color: #9ece9a;
 }
 .table td #close {
     border: 0;

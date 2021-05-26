@@ -1,22 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 /* NEW PROJ BUTTON */
 div#newProj {
-    padding-bottom: 3em;
+    padding: 3em 0;
+    float: right;
 }
 button#newProj-btn{
+    margin-right: 2em;
     padding: .5em 2em;
 }
 /* NEW PROJ BUTTON */
 
-/* TABLE START */
+/* HEADER START */
 div.container {
     width: 90%;
+    padding-top: 2em;
     margin: auto;
 }
 div.header {
-    margin: 3em 0;
+    margin: 0 2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 2.5em;
 }
 
 div.header p {
@@ -52,11 +61,14 @@ div.header .search #input-search{
     outline-width: 0;
     background:transparent;
 }
+/* HEADER END */
+
+/* TABLE START */
 tbody tr {
     transition: all 0.3s ease 0s;
 }
 tbody tr:hover {
-    background-color: #a7a9ff;
+    background-color: rgb(158, 206, 154);
 }
 tbody td{
     vertical-align:middle;

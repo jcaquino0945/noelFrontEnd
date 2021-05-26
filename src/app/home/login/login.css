@@ -14,8 +14,7 @@
     outline: 0;
     border: 1px solid #c7c7c7;
     border-radius: 5px;
-    padding: .5em 0;
-    padding-left: 15px;
+    padding: .5em 15px;
     font-size: 1.2em;
     margin: .5em 0;
     width: 100%;
@@ -25,16 +24,16 @@
     box-shadow: inset 0 0 2px #000000;
 }
 
-mat-dialog-actions button {
+mat-dialog-content button {
     padding: .5em 4em;
     width: 100%;
     margin-top: .5em;
     letter-spacing: 2px;
 }
-mat-dialog-actions .btn {
+mat-dialog-content .btn {
     background: #4990fa;
     border: #4990fa;
 }
-mat-dialog-actions .btn:hover {
+mat-dialog-content .btn:hover {
     background: #3572ce;
 }
