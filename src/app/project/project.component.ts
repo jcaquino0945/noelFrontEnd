@@ -95,7 +95,6 @@ console.log(this.file)
     if (!this.file) {
       this.projectService.addComment(id,this.comment.comment,author).subscribe((res: any) => {
         this.projectService.updateProjectText(id,this.projectText + 1).subscribe((res: any) => { 
-          console.log('comment uploaded')
         })
         this.projectService
       .getProjectIds()
@@ -111,35 +110,37 @@ console.log(this.file)
           this.project = project;
         },
         (err) => console.log(err)
-      );
+      ); 
     (errmess) => (this.errMess = <any>errmess);
-      },
+      }
+      ,
       (err: any) => {
         console.log(err);
       }
       )
+      console.log('comment uploaded')
     }
     else {
       this.projectService.addComment(id,this.comment.comment,author,this.file).subscribe((res: any) => {
         if (this.file.type.toString() == 'video/mp4') {
           this.projectService.updateProjectVideo(id,this.projectVideos + 1).subscribe((res: any) => { 
-            console.log('video uploaded')
           })
+          console.log('video uploaded')
         }
         if (this.file.type.toString() == 'image/png' || this.file.type.toString() == 'image/jpeg') {
           this.projectService.updateProjectImage(id,this.projectImages + 1).subscribe((res: any) => { 
-            console.log('image uploaded')
           })
+          console.log('image uploaded')
         }
         if (this.file.type.toString() == 'audio/mpeg' || this.file.type.toString() == 'audio/x-m4a') {
           this.projectService.updateProjectAudio(id,this.projectAudio + 1).subscribe((res: any) => { 
-            console.log('audio uploaded')
           })
+          console.log('audio uploaded')
         }
         if (this.file.type.toString() == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || this.file.type.toString() == 'application/msword' || this.file.type.toString() == 'text/plain' || this.file.type.toString() == 'application/vnd.openxmlformats-officedocument.presentationml.presentation' || this.file.type.toString() == 'application/pdf') {
           this.projectService.updateProjectText(id,this.projectText + 1).subscribe((res: any) => { 
-            console.log('text uploaded')
           })
+          console.log('text uploaded')
         } 
         //if (this.file)
         this.projectService
@@ -179,27 +180,26 @@ console.log(this.file)
     console.log(projectId)
     if (window.confirm("Are you sure you want to delete your comment?")) {
       this.projectService.deleteComment(commentId,userId,projectId).subscribe((res: any) => { 
-        console.log('comment deleted')
 
         if (fileType == 'image/jpeg' || fileType == 'image/png') {
           this.projectService.updateProjectImage(projectId,this.projectImages - 1).subscribe((res: any) => { 
-            console.log('image deleted')
           })
+          console.log('image deleted')
         }
         if (fileType == 'audio/mpeg' || fileType == 'audio/x-m4a') {
           this.projectService.updateProjectAudio(projectId,this.projectAudio - 1).subscribe((res: any) => { 
-            console.log('image deleted')
           })
+          console.log('audio deleted')
         }
         if (fileType == 'video/mp4') {
           this.projectService.updateProjectVideo(projectId,this.projectVideos - 1).subscribe((res: any) => { 
-            console.log('video deleted')
           })
+          console.log('video deleted')
         }
         if (fileType == 'comment' || fileType == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || fileType == 'application/msword' || fileType == 'text/plain' || this.file.type.toString() == 'application/vnd.openxmlformats-officedocument.presentationml.presentation' || this.file.type.toString() == 'application/pdf') {
           this.projectService.updateProjectText(projectId,this.projectText - 1).subscribe((res: any) => { 
-            console.log('text file/comment deleted')
           })
+          console.log('text file/comment deleted')
         }
         this.projectService
         .getProjectIds()
@@ -218,6 +218,7 @@ console.log(this.file)
         );
       (errmess) => (this.errMess = <any>errmess);
       })
+      console.log('comment deleted')
     }
     
   }

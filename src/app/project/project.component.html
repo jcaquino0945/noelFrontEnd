@@ -1,4 +1,9 @@
-
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  </div>
 <div class='container' *ngIf="project">
     <!-- feed header -->
     <div class='header'>
@@ -80,7 +85,7 @@
                             <a href="{{comment.fileName}}">file here (Microsoft PPT)</a>
                         </div>
                         <div class="media" *ngIf="comment.fileType == 'audio/x-m4a'" >
-                            <audio controls >
+                            <audio controls style="height: 15px;">
                                 <source src="{{comment.fileName}}" type="audio/mpeg" style="height: auto !important;">
                                 Your browser does not support the audio element.
                             </audio>
@@ -90,9 +95,6 @@
                                 <source src="{{comment.fileName}}" type="audio/mpeg" style="height: auto !important;">
                                 Your browser does not support the audio element.
                             </audio>
-                        </div>
-                        <div *ngIf="comment.fileType == 'application/pdf'" style="height: auto !important;">
-                            <p style="text-decoration: underline;">PDF not supported</p>
                         </div>
                     </div>
                 <hr>

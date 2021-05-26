@@ -83,7 +83,7 @@ export class DialogContentNewProjDialog implements OnInit {
       console.log(this.data.file)
       this.projectService.addProject(this.data.name,this.data.description,this.currentUser.user._id,this.data.file).subscribe((res: any) => {
         window.alert('Project uploaded!')
-        this.router.navigate(['feed'])
+        this.router.navigate(['/feed']);
         console.log('success');
         (errmess) => (this.errMess = <any>errmess);
       },
