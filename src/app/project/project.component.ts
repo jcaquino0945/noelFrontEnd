@@ -119,9 +119,6 @@ console.log(this.file)
       }
       )
     }
-    if (this.file.type.toString() == 'application/pdf') {
-      window.alert('Sorry PDF is not supported')
-    }
     else {
       this.projectService.addComment(id,this.comment.comment,author,this.file).subscribe((res: any) => {
         if (this.file.type.toString() == 'video/mp4') {
@@ -134,16 +131,16 @@ console.log(this.file)
             console.log('image uploaded')
           })
         }
-        if (this.file.type.toString() == 'audio/mpeg') {
+        if (this.file.type.toString() == 'audio/mpeg' || this.file.type.toString() == 'audio/x-m4a') {
           this.projectService.updateProjectAudio(id,this.projectAudio + 1).subscribe((res: any) => { 
             console.log('audio uploaded')
           })
         }
-        if (this.file.type.toString() == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || this.file.type.toString() == 'application/msword' || this.file.type.toString() == 'text/plain') {
+        if (this.file.type.toString() == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || this.file.type.toString() == 'application/msword' || this.file.type.toString() == 'text/plain' || this.file.type.toString() == 'application/vnd.openxmlformats-officedocument.presentationml.presentation' || this.file.type.toString() == 'application/pdf') {
           this.projectService.updateProjectText(id,this.projectText + 1).subscribe((res: any) => { 
             console.log('text uploaded')
           })
-        }
+        } 
         //if (this.file)
         this.projectService
       .getProjectIds()
@@ -183,8 +180,14 @@ console.log(this.file)
     if (window.confirm("Are you sure you want to delete your comment?")) {
       this.projectService.deleteComment(commentId,userId,projectId).subscribe((res: any) => { 
         console.log('comment deleted')
+
         if (fileType == 'image/jpeg' || fileType == 'image/png') {
           this.projectService.updateProjectImage(projectId,this.projectImages - 1).subscribe((res: any) => { 
+            console.log('image deleted')
+          })
+        }
+        if (fileType == 'audio/mpeg' || fileType == 'audio/x-m4a') {
+          this.projectService.updateProjectAudio(projectId,this.projectAudio - 1).subscribe((res: any) => { 
             console.log('image deleted')
           })
         }
@@ -193,7 +196,7 @@ console.log(this.file)
             console.log('video deleted')
           })
         }
-        if (fileType == 'comment' || fileType == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || fileType == 'application/msword' || fileType == 'text/plain') {
+        if (fileType == 'comment' || fileType == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || fileType == 'application/msword' || fileType == 'text/plain' || this.file.type.toString() == 'application/vnd.openxmlformats-officedocument.presentationml.presentation' || this.file.type.toString() == 'application/pdf') {
           this.projectService.updateProjectText(projectId,this.projectText - 1).subscribe((res: any) => { 
             console.log('text file/comment deleted')
           })

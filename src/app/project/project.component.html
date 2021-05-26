@@ -61,15 +61,33 @@
                         <div class="media" *ngIf="comment.fileType == 'image/jpeg'">
                             <img src="{{comment.fileName}}" alt="" class='media-content'>
                         </div>
+                        <div class="media" *ngIf="comment.fileType == 'image/png'">
+                            <img src="{{comment.fileName}}" alt="" class='media-content'>
+                        </div>
                         <div class="media" *ngIf="comment.fileType == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'">
-                            <a href="{{comment.fileName}}">file here (access in ms word)</a>
+                            <a href="{{comment.fileName}}">file here (MS Word)</a>
                         </div>
                         <div class="media" *ngIf="comment.fileType == 'application/msword'">
-                            <a href="{{comment.fileName}}">file here (access in ms word)</a>
+                            <a href="{{comment.fileName}}">file here (MS Word)</a>
+                        </div>
+                        <div class="media" *ngIf="comment.fileType == 'application/pdf'">
+                            <a href="{{comment.fileName}}">file here (PDF)</a>
+                        </div>
+                        <div class="media" *ngIf="comment.fileType == 'text/plain'">
+                            <a href="{{comment.fileName}}">file here (Plain Text)</a>
+                        </div>
+                        <div class="media" *ngIf="comment.fileType == 'application/vnd.openxmlformats-officedocument.presentationml.presentation'">
+                            <a href="{{comment.fileName}}">file here (Microsoft PPT)</a>
+                        </div>
+                        <div class="media" *ngIf="comment.fileType == 'audio/x-m4a'" >
+                            <audio controls >
+                                <source src="{{comment.fileName}}" type="audio/mpeg" style="height: auto !important;">
+                                Your browser does not support the audio element.
+                            </audio>
                         </div>
                         <div class="media" *ngIf="comment.fileType == 'audio/mpeg'">
                             <audio controls>
-                                <source src="{{comment.fileName}}" type="audio/mpeg">
+                                <source src="{{comment.fileName}}" type="audio/mpeg" style="height: auto !important;">
                                 Your browser does not support the audio element.
                             </audio>
                         </div>
