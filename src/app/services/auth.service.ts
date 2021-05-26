@@ -89,7 +89,7 @@ export class AuthService {
 
   public validate(username, password) {
     return this.http
-      .post('http://localhost:3000/users/login', {
+      .post('/users/login', {
         username: username,
         password: password,
       })
