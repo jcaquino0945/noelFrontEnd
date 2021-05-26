@@ -1,30 +1,41 @@
-<nav>
-    <h1 id="title"> APP TITLE </h1>
 
+<div id="home">
+
+    <nav>
+        <h1 id="title">SOAP</h1>
+
+        <ul id="actions">
+            <li> 
+                <div id="userLogin">
+                    <button mat-button id="userLogin-btn" class="btn btn-primary" (click)="openLogin()">Login</button>
+                </div> 
+            </li>
+            <li> 
+                <div id="userSignup">
+                    <button mat-button id="userSignup-btn" class="btn btn-primary" (click)="openSignup()">Signup</button>
+                </div>
+            </li>
+        </ul>
+    </nav>
     
-    <ul id="actions">
-        <li> 
-            <a href="home">Feed</a>
-        </li>
-        <li> 
-            <a href="home">About</a>
-        </li>
-        <li> 
-            <a href="home">Support</a>
-        </li>
-    </ul>
+</div>
+    
+<div class="jumbotron jumbotron-fluid">
+    <div class="container content">
+        <div class="img">
+            <img src="../../assets/imgs/filler.png" alt="">
+        </div>
+        <div class="caption">
+            <h1 class="display-3">About SOAP</h1>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat illum, doloremque voluptatibus eligendi consequuntur consectetur assumenda error voluptates aliquam aliquid suscipit delectus accusamus deserunt earum accusantium iusto nulla voluptate perferendis?
+            Est nemo ipsam architecto reprehenderit sed? Commodi voluptatem nulla dicta nemo in. Debitis, officiis velit rerum ut quo repellendus ratione est distinctio, blanditiis dolore modi dolores, ea atque totam vitae.</p>
+        </div>
+    </div>
+</div>
 
-    <ul id="actions">
-        <li> 
-            <div id="userLogin">
-                <button mat-button id="userLogin-btn" class="btn btn-primary" (click)="openLogin()">Login</button>
-            </div> 
-        </li>
-        <li> 
-            <div id="userSignup">
-                <button mat-button id="userSignup-btn" class="btn btn-primary" (click)="openSignup()">Signup</button>
-            </div>
-        </li>
-    </ul>
-</nav>
-
+<div id="bg-contain">
+    <div id="bg"></div>
+    <p>© 2021 | SOAP</p>
+</div>
+<!-- <div class="sidebar-footer">
+</div> -->
