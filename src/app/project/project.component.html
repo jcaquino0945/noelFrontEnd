@@ -1,8 +1,15 @@
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
+<div class="alert alert-success alert-dismissible fade show" role="alert" style="padding: 8px; position: fixed; width: 100%;" *ngIf="commentSuccess">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 5px;" (click)="resetNotifications()">
+      <span aria-hidden="true">×</span>
     </button>
-    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <strong>Comment has been posted!</strong> If comment is not seen kindly refresh your browser
+  </div>
+
+  <div class="alert alert-warning alert-dismissible fade show" role="alert" style="padding: 8px; position: fixed; width: 100%;" *ngIf="commentDeleted">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 5px;" (click)="resetNotifications()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <strong>Comment has been deleted</strong> If comment is not deleted kindly refresh your browser
   </div>
 <div class='container' *ngIf="project">
     <!-- feed header -->

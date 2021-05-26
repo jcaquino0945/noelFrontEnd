@@ -38,6 +38,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
+  commentDeleted: Boolean;
+  commentSuccess: Boolean;
   comment = { comment: ''};
   file: File = null;
   projects$: Project[];
@@ -118,29 +120,29 @@ console.log(this.file)
         console.log(err);
       }
       )
-      console.log('comment uploaded')
+      this.commentSuccess = true;
     }
     else {
       this.projectService.addComment(id,this.comment.comment,author,this.file).subscribe((res: any) => {
         if (this.file.type.toString() == 'video/mp4') {
           this.projectService.updateProjectVideo(id,this.projectVideos + 1).subscribe((res: any) => { 
           })
-          console.log('video uploaded')
+          this.commentSuccess = true;
         }
         if (this.file.type.toString() == 'image/png' || this.file.type.toString() == 'image/jpeg') {
           this.projectService.updateProjectImage(id,this.projectImages + 1).subscribe((res: any) => { 
           })
-          console.log('image uploaded')
+          this.commentSuccess = true;
         }
         if (this.file.type.toString() == 'audio/mpeg' || this.file.type.toString() == 'audio/x-m4a') {
           this.projectService.updateProjectAudio(id,this.projectAudio + 1).subscribe((res: any) => { 
           })
-          console.log('audio uploaded')
+          this.commentSuccess = true;
         }
         if (this.file.type.toString() == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || this.file.type.toString() == 'application/msword' || this.file.type.toString() == 'text/plain' || this.file.type.toString() == 'application/vnd.openxmlformats-officedocument.presentationml.presentation' || this.file.type.toString() == 'application/pdf') {
           this.projectService.updateProjectText(id,this.projectText + 1).subscribe((res: any) => { 
           })
-          console.log('text uploaded')
+          this.commentSuccess = true;
         } 
         //if (this.file)
         this.projectService
@@ -184,22 +186,22 @@ console.log(this.file)
         if (fileType == 'image/jpeg' || fileType == 'image/png') {
           this.projectService.updateProjectImage(projectId,this.projectImages - 1).subscribe((res: any) => { 
           })
-          console.log('image deleted')
+          this.commentDeleted = true;
         }
         if (fileType == 'audio/mpeg' || fileType == 'audio/x-m4a') {
           this.projectService.updateProjectAudio(projectId,this.projectAudio - 1).subscribe((res: any) => { 
           })
-          console.log('audio deleted')
+          this.commentDeleted = true;
         }
         if (fileType == 'video/mp4') {
           this.projectService.updateProjectVideo(projectId,this.projectVideos - 1).subscribe((res: any) => { 
           })
-          console.log('video deleted')
+          this.commentDeleted = true;
         }
         if (fileType == 'comment' || fileType == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' || fileType == 'application/msword' || fileType == 'text/plain' || this.file.type.toString() == 'application/vnd.openxmlformats-officedocument.presentationml.presentation' || this.file.type.toString() == 'application/pdf') {
           this.projectService.updateProjectText(projectId,this.projectText - 1).subscribe((res: any) => { 
           })
-          console.log('text file/comment deleted')
+          this.commentDeleted = true;
         }
         this.projectService
         .getProjectIds()
@@ -218,9 +220,14 @@ console.log(this.file)
         );
       (errmess) => (this.errMess = <any>errmess);
       })
-      console.log('comment deleted')
+      this.commentDeleted = true;
     }
     
+  }
+
+  resetNotifications() {
+    this.commentDeleted = false;
+    this.commentSuccess = false;
   }
 
 }

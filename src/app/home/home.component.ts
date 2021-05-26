@@ -88,7 +88,7 @@ export class DialogContentLoginDialog {
   styleUrls: ['./signup/signup.css']
 })
 export class DialogContentSignupDialog {
-  user = { username: '', password: '', name: '', contactNumber: '', birthday: '', email: '' };
+  user = { username: '', password: '', name: '', contactNumber: '',address: '', birthday: '', email: '' };
   errMess: string;
 
   constructor(
@@ -97,7 +97,7 @@ export class DialogContentSignupDialog {
   ) {}
 
   register() {
-    this.authService.register(this.user.username,this.user.password,this.user.name,this.user.contactNumber,this.user.birthday,this.user.email).subscribe((res: any) => {
+    this.authService.register(this.user.username,this.user.password,this.user.name,this.user.contactNumber,this.user.address,this.user.birthday,this.user.email).subscribe((res: any) => {
       window.alert('Registered! Wait for admin to verify your account before you can login!');
       (errmess) => (this.errMess = <any>errmess);
     },

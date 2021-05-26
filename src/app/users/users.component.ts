@@ -22,11 +22,15 @@ export class UsersComponent implements OnInit {
     this.currentUser = this.authService.getUserDetails();
   }
 
-  updateVerificationStatus(id,value) {
+  updateVerificationStatus(email,id,value) {
+    console.log(email)
+
     if (window.confirm("Change verification status of user?")) {
       if (value.checked == true) {
         window.alert("User is now verified!");
         this.authService.updateVerification(id,value.checked).subscribe((res: any) => {
+          console.log(email)
+          this.authService.sendVerificationEmail(email).subscribe((res: any) => {})
           console.log('verified!')
         })
       } 
