@@ -37,6 +37,24 @@ export class AuthService {
       .get<any[]>(apiUrl, {headers: this.headersWithAuth})
       .pipe(catchError(this.processHTTPMsgService.handleError));
   }
+  sendVerificationEmail(email) {
+    let data = JSON.stringify({
+      "to": email,
+    })
+
+    const params = new HttpParams();
+    let headersWithAuth = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    const options = {
+      params,
+      reportProgress: true,
+      headers: headersWithAuth,
+    };
+    const req = new HttpRequest('POST', apiUrl + '/userVerification',data, options);
+    return this.http.request(req);
+  }
+
   updateVerification(id, status) {
     let data = JSON.stringify({
       "verified": status,
@@ -110,7 +128,7 @@ export class AuthService {
     const req = new HttpRequest('DELETE', apiUrl + '/' + userId , options);
     return this.http.request(req);
   }
-  public register(username,password,name,contactNumber,birthday,email):Observable<any> {
+  public register(username,password,name,contactNumber,address,birthday,email):Observable<any> {
     console.log( username)
     console.log( password)
     console.log( name)
@@ -123,6 +141,7 @@ export class AuthService {
       "password": password,
       "name": name,
       "contactNumber": contactNumber,
+      "address": address,
       "birthday": birthday,
       "email": email,
       "admin": false,

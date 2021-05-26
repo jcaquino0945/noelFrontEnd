@@ -31,16 +31,19 @@ export class DashboardComponent implements OnInit {
   deleteProject(projId,author) {
     if (window.confirm("Are you sure you want to delete your project?")) {
       this.projectService.deleteProject(projId,this.currentUser.user._id).subscribe((res: any) => {
+        this.projectService.getProjects().subscribe(
+          (projects$) => (this.projects$ = projects$)
+        )
         console.log('project deleted');
+        
         (errmess) => (this.errMess = <any>errmess);
       },
       (err: any) => {
         console.log(err);
       })
-      this.projectService.getProjects().subscribe(
-        (projects$) => (this.projects$ = projects$)
-      )
+     
     }
+    
 }
 
   openDialog() {
@@ -61,6 +64,7 @@ export class DialogContentNewProjDialog implements OnInit {
   data = { name: '',description: '', file: File = null};
   currentUser;
   errMess: string;
+  projects$: Project[];
 
   constructor(
     private authService: AuthService,
@@ -78,7 +82,8 @@ export class DialogContentNewProjDialog implements OnInit {
       console.log(this.data.description)
       console.log(this.data.file)
       this.projectService.addProject(this.data.name,this.data.description,this.currentUser.user._id,this.data.file).subscribe((res: any) => {
-        this.router.navigate(['feed']);
+        window.alert('Project uploaded!')
+        this.router.navigate(['/feed']);
         console.log('success');
         (errmess) => (this.errMess = <any>errmess);
       },

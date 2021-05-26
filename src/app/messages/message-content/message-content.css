@@ -1,3 +1,29 @@
 .container {
     color: black;
 }
+
+.user-message {
+    font-size: 1.5em;
+    outline: none;
+    padding: .7em 1em;
+    border: 1px solid #c7c7c7;
+    border-radius: 5px;
+    width: 50vw;
+    resize: none;
+    margin-bottom: 1em;
+}
+.message .user-message {
+    background-color: rgb(158, 206, 154, .5);
+    width: 85%;
+    float: left;
+}
+
+.reply .user-message {
+    width: 85%;
+    float: right;
+}
+
+.btn {
+    float: right;
+    padding: .5em 3em;
+}

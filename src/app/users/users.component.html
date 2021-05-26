@@ -1,3 +1,6 @@
+
+  
+
 <div class='container'>
 
     <!-- feed header -->
@@ -9,6 +12,8 @@
             <tr>
                 <th>Full Name</th>
                 <th>Email</th>
+                <th>Birthday</th>
+                <th>Address</th>
                 <th>Admin</th>
                 <th>Verified</th>
                 <th>Action</th>
@@ -18,10 +23,16 @@
             <tr *ngFor="let user of users$">
                 <td>{{user.name}}</td>
                 <td>{{user.email}}</td>
+                <td>{{user.birthday}}</td>
+                <td>{{user.address}}</td>
                 <td><mat-slide-toggle color="primary" [(ngModel)]="user.admin" (change)="updateAdminStatus(user._id,$event)"></mat-slide-toggle></td>
-                <td> <mat-slide-toggle color="primary" [(ngModel)]="user.verified" (change)="updateVerificationStatus(user._id,$event)"></mat-slide-toggle>
+                <td> <mat-slide-toggle color="primary" [(ngModel)]="user.verified" (change)="updateVerificationStatus(user.email,user._id,$event)"></mat-slide-toggle>
                 </td>
-                <td> <mat-icon (click)="deleteUser(user._id)">delete</mat-icon> </td>
+                <td> 
+                    <mat-icon (click)="deleteUser(user._id)">
+                        <input type="submit" value="close" id="close">
+                    </mat-icon> 
+                </td>
             </tr>
         </tbody>
     </table>
