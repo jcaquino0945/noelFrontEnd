@@ -70,7 +70,7 @@ div.frame {
 }
 div.frame:hover {
     transform: scale(1.03);
-    box-shadow: #9ece9a 0 5px 10px;
+    box-shadow: #a5a5a5 0 5px 10px;
 }
 
 div.content-container .feed-img{
