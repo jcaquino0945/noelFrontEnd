@@ -12,7 +12,7 @@ import { ProcessHTTPMsgService } from './process-httpmsg.service';
 
 import { Contact } from '../models/contact';
 
-const apiUrl = 'http://localhost:3000/contact'; //api url from backend service
+const apiUrl = '/contact'; //api url from backend service
 
 
 @Injectable({
