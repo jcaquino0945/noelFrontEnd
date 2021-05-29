@@ -1,3 +1,10 @@
+<div class="alert alert-success alert-dismissible fade show" role="alert" style="padding: 8px; position: fixed; width: 100%;" *ngIf="commentSuccess">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 5px;" (click)="resetNotifications()">
+      <span aria-hidden="true">×</span>
+    </button>
+    <strong>Project has been posted!</strong> If changes are not seen kindly refresh your browser
+  </div>
+
 <div class="container" *ngIf="project">
 
     <!-- feed header -->
@@ -12,10 +19,14 @@
         </div>
 
         <div class='content-info'>
-            <p>{{project.name}}</p>
+            <label style="margin-right: 4px;">Project Name:</label>
+            <input type="text" id="proj-title" class="user-input" placeholder="{{project.name}}" [(ngModel)]="data.name">
             <p>{{project.authorName}}</p>
-            <p>{{project.description}}</p>
+            <br>
+            <label style="margin-right: 4px;">Project Description:</label>
+            <input type="text" id="proj-title" style="width: 100% !important;" class="user-input" placeholder="{{project.description}}" [(ngModel)]="data.description">
         </div>
+        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial (click)="editProject(project._id)" [disabled]="data.name == project.name && data.description == project.description">Edit Project</button>
     </div>
 
     <div class="count-track">

@@ -15,6 +15,8 @@ export class AdminProjectComponent implements OnInit {
   project: Project;
   projectIds: string[];
   currentUser;
+  data = { name: '',description: ''};
+  commentSuccess: Boolean;
 
   constructor(
     private projectService: ProjectService,
@@ -36,13 +38,29 @@ export class AdminProjectComponent implements OnInit {
       )
       .subscribe(
         (project) => {
-          this.project = project;
+          this.project = project, this.data.name = project.name,this.data.description = project.description;
         }
       );
 
       this.projectService.getProjects().subscribe(
         (projects$) => (this.projects$ = projects$)
       );
+  }
+  editProject(id) {
+    console.log(this.data.name)
+    console.log(this.data.description)
+    this.projectService.editProject(id,this.data.name,this.data.description).subscribe((res: any) => {
+      console.log('success');
+      this.commentSuccess = true;
+
+    },
+    (err: any) => {
+      console.log(err);
+    })
+  }
+
+  resetNotifications() {
+    this.commentSuccess = false;
   }
 
 }
