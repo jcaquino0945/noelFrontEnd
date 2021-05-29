@@ -29,12 +29,16 @@ div.header p {
 /* HEADER END */
 
 div.form-container{
-    margin-top: 2em;
+    margin-top: 4em;
     margin-left: -2em ;
-    height: 80vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgb(158, 206, 154);
+    background: linear-gradient(32deg, rgba(158,206,154,0.3) 0%, rgba(28,82,83,.8) 100%);
+    border-radius: 25px;
+    
 }
 
 div.form-container .form .title{
