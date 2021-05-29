@@ -25,7 +25,7 @@
                     <td>{{ contact.date | date }}</td>
                     <td id="actions">
                         <mat-icon> 
-                            <input (click)="openMessage()" type="submit" value="reply" id="reply">
+                            <input (click)="openMessage( contact.name, contact.email, contact.date, contact.content, contact.subject )" type="submit" value="reply" id="reply">
                         </mat-icon>
                         <mat-icon> 
                             <input (click)="deleteMessage(contact._id)" type="submit" value="close" id="close">

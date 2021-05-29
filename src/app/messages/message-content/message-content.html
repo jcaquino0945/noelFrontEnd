@@ -1,23 +1,20 @@
-<div class="container">
+<div class="container" >
     
     <div class="detail">
         <h2 mat-dialog-title> 
             <div id="user">
-                From: <span id="sender">Dummy</span> 
+                From: <span id="sender"> {{ data.name }} </span> 
             </div>
-            <div id="date">
-                Date Received: <span id="date-received">xx-xx-xx</span> 
-            </div>
+
         </h2>
     </div>
     <div class="message content">
         <span>Message:</span>
-        <!-- <textarea class="user-message" cols="30" rows="7" readonly> hahaha </textarea> -->
-        <p class="user-message" id="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nemo!</p>
+        <p class="user-message" id="message"> {{ data.content }} </p>
     </div>
     <div class="reply content">
-        <textarea placeholder="Reply..." class="user-message" cols="30" rows="7" ></textarea>
+        <textarea placeholder="Reply..." class="user-message" cols="30" rows="7" [(ngModel)]="user.reply" ></textarea>
     </div>
-    <button mat-button class="btn btn-primary">Reply</button>
+    <button mat-button class="btn btn-primary" (click)="reply()" mat-dialog-close>Reply</button>
 
 </div>

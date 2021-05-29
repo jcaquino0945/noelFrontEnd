@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
 }
-#sender, #date-received {
+#sender{
     font-weight: bold;
 }
 

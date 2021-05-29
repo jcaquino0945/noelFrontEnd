@@ -79,4 +79,24 @@ export class ContactService {
 
   }
 
+  
+  sendReceipt(emailDetail) {
+    const myHeaders = new Headers();
+    myHeaders.append('Content-Type', 'application/json');
+
+    var requestOptions: RequestInit = {
+      method: 'POST',
+      headers: myHeaders,
+      body: JSON.stringify(emailDetail),
+    };
+
+    console.log(JSON.stringify(emailDetail))
+
+    fetch(apiUrl + '/supportReply', requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log('error', error));
+  }
+
+
 }
