@@ -8,16 +8,16 @@
             <mat-dialog-content class="mat-typography">
                 <div class="content-container">
                     <p class="title">Subject</p>
-                    <input type="text" id="proj-title" class="user-input" placeholder="Subject title">
+                    <input type="text" id="proj-title" class="user-input" placeholder="Subject title" [(ngModel)]="user.subject">
                 </div>
                 <div class="content-container">
                     <p class="title">Message</p>
-                    <textarea name="" id="desc" class="user-input" cols="30" rows="8"placeholder="Message here"></textarea>
+                    <textarea name="" id="desc" class="user-input" cols="30" rows="8"placeholder="Message here" [(ngModel)]="user.content"></textarea>
                 </div>
             </mat-dialog-content>
 
             <mat-dialog-actions align="end">
-                <button mat-button class="btn btn-primary">Submit</button>
+                <button mat-button class="btn btn-primary" (click)="send(currentUser.user.name, currentUser.user.email)">Submit</button>
             </mat-dialog-actions>
         </div>
     </div>
