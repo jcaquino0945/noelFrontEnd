@@ -41,8 +41,8 @@ export class UsersComponent implements OnInit {
         })
       }
     } 
-   }
-   updateAdminStatus(id,value) {
+  }
+  updateAdminStatus(id,value) {
     if (window.confirm("Change admin status of user?")) {
       if (value.checked == true) {
         window.alert("User is now an Admin!");
@@ -57,8 +57,8 @@ export class UsersComponent implements OnInit {
         })
       }
     } 
-   }
-   deleteUser(userId) {
+  }
+  deleteUser(userId) {
     if (window.confirm("Are you sure you want to delete this user?")) {
       this.authService.deleteUser(userId).subscribe((res: any)=> {
         this.authService.getUsers().subscribe(
@@ -67,5 +67,5 @@ export class UsersComponent implements OnInit {
         );
       })
     }
-   }
+  }
 }

@@ -1,6 +1,13 @@
 .container {
     color: black;
 }
+.detail h2 {
+    display: flex;
+    justify-content: space-between;
+}
+#sender, #date-received {
+    font-weight: bold;
+}
 
 .user-message {
     font-size: 1.5em;
@@ -12,15 +19,22 @@
     resize: none;
     margin-bottom: 1em;
 }
-.message .user-message {
+.user-message#message{
+    border: 1px solid rgb(158, 206, 154);
+}
+/* .message .user-message {
     background-color: rgb(158, 206, 154, .5);
     width: 85%;
     float: left;
-}
+} */
 
-.reply .user-message {
+/* .reply .user-message {
     width: 85%;
     float: right;
+} */
+
+.reply .user-message {
+    margin-top: 20px;
 }
 
 .btn {

@@ -1,7 +1,19 @@
 <div class="container">
-    <h2 mat-dialog-title> Sender: <span>Dummy</span> </h2>
+    
+    <div class="detail">
+        <h2 mat-dialog-title> 
+            <div id="user">
+                From: <span id="sender">Dummy</span> 
+            </div>
+            <div id="date">
+                Date Received: <span id="date-received">xx-xx-xx</span> 
+            </div>
+        </h2>
+    </div>
     <div class="message content">
-        <textarea class="user-message" cols="30" rows="7" readonly> hahaha </textarea>
+        <span>Message:</span>
+        <!-- <textarea class="user-message" cols="30" rows="7" readonly> hahaha </textarea> -->
+        <p class="user-message" id="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nemo!</p>
     </div>
     <div class="reply content">
         <textarea placeholder="Reply..." class="user-message" cols="30" rows="7" ></textarea>

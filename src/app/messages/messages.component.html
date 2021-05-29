@@ -17,7 +17,6 @@
                     <th>Sender Name</th>
                     <th>Date Received</th>
                     <th>Action</th>
-                    <th>ID</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,16 +24,14 @@
                     <td>{{ contact.name }}</td>
                     <td>{{ contact.date | date }}</td>
                     <td id="actions">
-                    <mat-icon> 
-                        <input (click)="openMessage()" type="submit" value="reply" id="reply">
-                    </mat-icon>
-                    <mat-icon> 
-                        <input type="submit" value="close" id="close">
-                    </mat-icon>
+                        <mat-icon> 
+                            <input (click)="openMessage()" type="submit" value="reply" id="reply">
+                        </mat-icon>
+                        <mat-icon> 
+                            <input (click)="deleteMessage(contact._id)" type="submit" value="close" id="close">
+                        </mat-icon>
                     </td>
-                    <td> {{contact._id}} </td>
                 </tr>
-            
             </tbody>
         </table>
     </div>

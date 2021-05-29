@@ -61,4 +61,22 @@ export class ContactService {
     return this.http.request(req);
   }
 
+
+  deleteContact(id) {
+    const params = new HttpParams();
+
+    const header = new HttpHeaders({
+      Authorization: 'bearer ' + sessionStorage.getItem('token'),
+    });
+
+    const options = {
+      params,
+      reportProgress: true,
+      headers: header,
+    };
+    const req = new HttpRequest('DELETE', apiUrl + '/' + id , options);
+    return this.http.request(req);
+
+  }
+
 }

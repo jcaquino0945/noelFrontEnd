@@ -4,6 +4,11 @@ import { Router } from '@angular/router';
 
 import { Contact } from '../models/contact';
 import { ContactService } from '../services/contact.service';
+
+// export interface messageContent{
+//   Contact
+// }
+
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',
@@ -25,7 +30,6 @@ export class MessagesComponent implements OnInit {
       (contact$) => (this.contact$ = contact$),
       (errmess) => (this.errMess = <any>errmess)
     );
-
   }
 
   openMessage() {
@@ -36,8 +40,25 @@ export class MessagesComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
-  
+
+  deleteMessage(contactId) {
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      this.contactService.deleteContact(contactId).subscribe((res: any)=> {
+        this.contactService.getMessage().subscribe(
+          (contact$) => (this.contact$ = contact$),
+          (errmess) => (this.errMess = <any>errmess)
+        );
+      })
+    }
+  }
 }
+
+// export class userMessage {
+//   constructor(public dialog: MatDialog) {}
+
+
+// }
+
 @Component({
   selector: 'message',
   templateUrl: './message-content/message-content.html',
