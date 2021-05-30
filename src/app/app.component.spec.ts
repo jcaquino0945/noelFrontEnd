@@ -23,7 +23,7 @@ describe('AppComponent', () => {
   it(`should have as title 'noelFrontEnd'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('noelFrontEnd');
+    expect(app.title).toEqual('SOAP RCSSED');
   });
 
   it('should render title', () => {

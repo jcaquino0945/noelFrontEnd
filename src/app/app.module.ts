@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent, DialogLogoutDialog } from './sidebar/sidebar.component';
@@ -55,7 +54,9 @@ import { MessagesComponent, DialogContentReplyDialog } from './messages/messages
     ReactiveFormsModule,
     MatSlideToggleModule
   ],
-  providers: [],
+  providers: [
+    Title
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
