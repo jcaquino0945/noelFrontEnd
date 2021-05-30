@@ -88,7 +88,7 @@ nav #actions{
     z-index: 2;
     background: rgba(255, 255, 255, 0.5);
     height: auto;
-    width: 80vw;
+    width: 60vw;
     position: absolute;
     left: 50%;
     top: 55%;
@@ -99,6 +99,7 @@ nav #actions{
 .jumbotron .content {
     padding: 2em;
     display: flex;
+    align-items: center;
     margin: auto;
 }
 .jumbotron .container .img {
@@ -118,3 +119,39 @@ nav #actions{
     line-height: 28px;
 }
 /* JUMBOTRON END */
+
+
+.card-container{
+    width: 100%;
+    text-align: center;
+    padding: 2em 0;
+    margin: auto;
+    background: linear-gradient(32deg, rgba(158,206,154,0.3) 0%, rgba(28,82,83,0.5) 100%);
+}
+.card-container h2{
+    font-size: 2.1em;
+    font-weight: bold;
+}
+div.soap-card {
+    width: 80%;
+    margin: 2em auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div.card-content {
+    background: #9ece9a;
+    width: 300px;
+    display: inline;
+    padding: 20px;
+    box-shadow: #a5a5a5 0 5px 10px;
+}
+div.card-content .card-title{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.card-img-top {
+    max-height: 250px;
+    width: auto;
+    margin: auto;
+}

@@ -17,6 +17,14 @@
     width: 80%;
     height: 100%;
     background-color: #FDFDFD;
+
+    background-image:url("../assets/imgs/bg-farm.png");
+    height: 100vh;
+    width: 100vw;
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: conta
 }
 ::ng-deep.mat-dialog-container {
     background: #fff;
