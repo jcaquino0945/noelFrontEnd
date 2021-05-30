@@ -8,6 +8,9 @@
 div.container {
     width: 90%;
     margin: auto;
+    background: rgb(255, 255, 255);
+    padding: 0 2em;
+    margin-bottom: 2em;
 }
 div.header {
     margin: 3em 0;

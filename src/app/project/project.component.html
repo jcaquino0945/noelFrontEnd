@@ -11,10 +11,10 @@
     </button>
     <strong>Comment has been deleted</strong> If comment is not deleted kindly refresh your browser
   </div>
-<div class='container' *ngIf="project">
+<div class='container content' *ngIf="project">
     <!-- feed header -->
     <div class='header'>
-        <span>Project</span>
+        <p>Project</p>
 
         <!-- <div class='search'>
             <mat-icon>search</mat-icon>
@@ -56,7 +56,7 @@
 
             </div>
 
-            <div class="others-comment">
+            <div class="others-comment" >
                 <div class="content" *ngFor="let comment of project.comments">
                     <div class="commenter-info">
                         <span>{{comment.authorName}}:</span>
