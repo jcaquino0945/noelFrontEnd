@@ -19,6 +19,7 @@ div.container {
     width: 90%;
     padding-top: 2em;
     margin: auto;
+    background:transparent;
 }
 div.header {
     margin: 0 2em;
@@ -99,3 +100,13 @@ tbody td{
     background: #ff2222;
 }
 /* TABLE END */
+/* 
+#bg{
+    background-image: url("../../assets/imgs/farm.jpg");
+    height: 100vw;
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .3;
+    object-fit: contain;
+} */

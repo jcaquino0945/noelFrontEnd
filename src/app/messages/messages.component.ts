@@ -96,10 +96,13 @@ export class DialogContentReplyDialog implements OnInit {
         subject: `Our admin has replied to your query.`,  
         html: 
         `
-          <h3> From: ${ this.data.name } </h3>
-          <span> Subject: ${ this.data.subject } </span>
-          <br>
-          <p> Reply: ${ this.user.reply } </p>
+          
+          <div> 
+            <h3> From: ${ this.data.name } </h3>
+            <span> Subject: ${ this.data.subject } </span>
+            <br>
+            <p> Reply: ${ this.user.reply } </p>
+          </div>
         `
       }
       console.log( emailDetail )
