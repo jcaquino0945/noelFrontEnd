@@ -37,6 +37,6 @@
     </mat-dialog-content>
 
     <mat-dialog-actions align="center">
-        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial (click)="register()">SIGN UP</button>
+        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial (click)="register()" [disabled]="user.name == '' || user.birthday == '' || user.contactNumber == '' || user.address == '' || user.email == '' || user.username == '' || user.password == ''">SIGN UP</button>
     </mat-dialog-actions>
 </div>

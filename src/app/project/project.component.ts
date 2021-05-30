@@ -167,8 +167,6 @@ console.log(this.file)
       }
       )
     }
-    window.location.reload();
-
   }
 
   onFileChange(files: FileList) {
