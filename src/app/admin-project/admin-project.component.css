@@ -33,7 +33,7 @@ div.content-container .img-container {
     margin: auto;
     display: flex;
     justify-content: center;
-    background: #6166f94b;
+    background: linear-gradient(32deg, rgba(158,206,154,0.3) 0%, rgba(28,82,83,1) 100%);
     max-height: 350px;
 }
 div.content-container .img-container img{
@@ -87,8 +87,7 @@ div.container .table tbody tr {
     transition: all 0.3s ease 0s;
 }
 div.container .table tbody tr:hover {
-    background-color: #a7a9ff;
-    /* background-color: #757af8; */
+    background: rgb(158, 206, 154);
 }
 
 .table-container #tbl-content #close{
