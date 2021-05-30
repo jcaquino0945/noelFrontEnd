@@ -102,20 +102,20 @@ nav #actions{
     align-items: center;
     margin: auto;
 }
-.jumbotron .container .img {
+.jumbotron .content .img {
     margin-right: 2em;
 }
-.jumbotron .container .img img {
+.jumbotron .content .img img {
     max-height: 250px;
     max-width: 300px;
 }
-.jumbotron .container .caption {
+.jumbotron .content .caption {
     margin: auto;
 }
-.jumbotron .container .caption h1.display-3{
+.jumbotron .content .caption h1.display-3{
     font-weight: bold;
 }
-.jumbotron .container .caption p.lead{
+.jumbotron .content .caption p.lead{
     line-height: 28px;
 }
 /* JUMBOTRON END */

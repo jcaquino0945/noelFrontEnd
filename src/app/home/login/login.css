@@ -1,11 +1,11 @@
-.container {
+.content {
     color: black;
     width: 20vw;
     height: auto;
     margin-bottom: 1.5em;
 }
 
-.container #title{
+.content #title{
     text-align: center;
     user-select: none;
 }

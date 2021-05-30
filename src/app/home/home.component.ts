@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.dialog.open(disclaimerDialog);
   }
 
   openLogin() {
@@ -107,3 +108,45 @@ export class DialogContentSignupDialog {
   }
 
 }
+
+
+@Component({
+  selector: 'dialog-elements-example-dialog',
+  template: `
+  <div id="content"> 
+    <h1 mat-dialog-title>User Disclaimer</h1>
+    <div mat-dialog-content>I am aware that being user  in this web application , the web administrators  will have access to my personal data in order to provide assistance to my concerns. Therefore, I give consent to them to use my personal data for this web application purposes only.</div>
+    <div class="action" mat-dialog-actions>
+      <button mat-button mat-dialog-close>Okay</button>
+    </div>
+  </div>
+  `,
+  styles: [
+    `
+    #content{
+      color: #000;
+    }
+
+    .action {
+      float: right;
+    }
+    .action button{
+      padding: .5em 4em;
+      width: 100%;
+      margin-top: .5em;
+    }
+    .action button{
+      background: #58B761;
+      outline: none;
+      border: #58B761;
+      color: #ffffff;
+      transition: all 0.3s ease 0s;
+    }
+    .action button:hover{
+      background: #4a9b52;
+    }
+    `
+  ]
+})
+
+export class disclaimerDialog {}

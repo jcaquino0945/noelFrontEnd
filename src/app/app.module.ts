@@ -17,12 +17,11 @@ import { UsersComponent } from './users/users.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import {MatDialogModule} from '@angular/material/dialog';
-import { HomeComponent, DialogContentLoginDialog, DialogContentSignupDialog } from './home/home.component';
+import { HomeComponent, DialogContentLoginDialog, DialogContentSignupDialog, disclaimerDialog } from './home/home.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { SupportComponent } from './support/support.component';
 import { MessagesComponent, DialogContentReplyDialog } from './messages/messages.component';
-
 
 @NgModule({
   declarations: [
@@ -42,7 +41,8 @@ import { MessagesComponent, DialogContentReplyDialog } from './messages/messages
     DialogLogoutDialog,
     SupportComponent,
     MessagesComponent,
-    DialogContentReplyDialog
+    DialogContentReplyDialog,
+    disclaimerDialog
   ],
   imports: [
     BrowserModule,

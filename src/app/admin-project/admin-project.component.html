@@ -26,7 +26,7 @@
             <label style="margin-right: 4px;">Project Description:</label>
             <input type="text" id="proj-title" style="width: 100% !important;" class="user-input" placeholder="{{project.description}}" [(ngModel)]="data.description">
         </div>
-        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial (click)="editProject(project._id)" [disabled]="data.name == project.name && data.description == project.description">Edit Project</button>
+        <button mat-button class="btn btn-primary" [mat-dialog-close]="true" cdkFocusInitial (click)="editProject(project._id)" [disabled]="data.name == project.name && data.description == project.description">Update Project</button>
     </div>
 
     <div class="count-track">

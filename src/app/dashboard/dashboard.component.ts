@@ -117,3 +117,15 @@ export class DialogContentNewProjDialog implements OnInit {
   }
 
 }
+
+@Component({
+  selector: 'dialog-elements-example-dialog',
+  template: `
+  <h1 mat-dialog-title>User Disclaimer</h1>
+  <div mat-dialog-content>I am aware that being user  in this web application , the web administrators  will have access to my personal data in order to provide assistance to my concerns. Therefore, I give consent to them to use my personal data for this web application purposes only.</div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Okay</button>
+  </div>
+  `,
+})
+export class disclaimerDialog {}
