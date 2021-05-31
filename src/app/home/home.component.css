@@ -73,6 +73,7 @@ nav #actions{
     bottom: 0;
 }
 #bg {
+    /* https://unsplash.com/photos/qgHGDbbSNm8 */
     background-image: url("../../assets/imgs/home-bg.jpg");
     height: 100%;
     background-position: center ;
