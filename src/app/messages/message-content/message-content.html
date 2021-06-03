@@ -5,12 +5,22 @@
             <div id="user">
                 From: <span id="sender"> {{ data.name }} </span> 
             </div>
+            <!-- Subject: <span id="sender"> {{ data.subject }} </span> 
+            Content: <span id="sender"> {{ data.content }} </span>  -->
+
+            <!-- <div id="message">
+                Content: <span id="sender"> {{ data.content }} </span> 
+            </div> -->
 
         </h2>
     </div>
     <div class="message content">
-        <span>Message:</span>
-        <p class="user-message" id="message"> {{ data.content }} </p>
+        <p>Message:</p>
+        <p class="user-message message"> {{ data.content }} </p>
+    </div>
+    <div class="message content">
+        <p>Content:</p>
+        <textarea class="user-message message" cols="30" rows="7" disabled>{{ data.subject }}</textarea>
     </div>
     <div class="reply content">
         <textarea placeholder="Reply..." class="user-message" cols="30" rows="7" [(ngModel)]="user.reply" ></textarea>
