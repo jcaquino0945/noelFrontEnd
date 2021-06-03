@@ -120,7 +120,7 @@ div.content-container .details p{
     position: absolute;
     z-index: -1;
     background: #000;
-    background-image: url("../../assets/imgs/bg-farm.png");
+    /* background-image: url("../../assets/imgs/bg-farm.jpg"); */
     height: 100%;
     width: 100%;
     background-position: center ;

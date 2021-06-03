@@ -73,6 +73,7 @@ nav #actions{
     bottom: 0;
 }
 #bg {
+    /* https://unsplash.com/photos/qgHGDbbSNm8 */
     background-image: url("../../assets/imgs/home-bg.jpg");
     height: 100%;
     background-position: center ;
@@ -150,8 +151,18 @@ div.card-content .card-title{
     font-size: 1.5em;
     font-weight: bold;
 }
+.img-container {
+    min-height: 250px;
+    min-width: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .card-img-top {
     max-height: 250px;
+    max-width: 250px;
     width: auto;
     margin: auto;
+    object-fit: contain;
 }

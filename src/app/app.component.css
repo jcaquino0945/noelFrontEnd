@@ -17,8 +17,8 @@
     width: 80%;
     height: 100%;
     background-color: #FDFDFD;
-
-    background-image:url("../assets/imgs/bg-farm.png");
+    /* https://ak.picdn.net/shutterstock/videos/3646073/thumb/1.jpg */
+    background-image:url("../assets/imgs/bg-farm.jpg");
     height: 100%;
     width: 100%;
     background-position: center ;
